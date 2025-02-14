@@ -1197,3 +1197,477 @@
 2025-02-05 09:45:25.277 | ERROR    | __main__:consume_messages_from_kafka:148 - ERROR: Could not consume messages from Kafka: Invalid file descriptor: -1
 2025-02-05 09:45:25.277 | ERROR    | __main__:main:203 - Unexpected error: Invalid file descriptor: -1
 2025-02-05 09:45:25.278 | INFO     | __main__:main:205 - Consumer shutting down.
+2025-02-13 22:15:04.514 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 22:15:04.516 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 22:15:04.517 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 22:15:04.517 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 22:15:04.517 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 22:15:04.517 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 22:15:04.517 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 22:15:04.517 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-13 22:15:04.517 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 22:15:04.517 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 22:15:04.518 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 22:15:04.518 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-13 22:15:04.518 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 22:15:04.518 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 22:15:04.518 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-13 22:15:06.549 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-13 22:15:06.549 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-13 22:17:43.853 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 22:17:43.853 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 22:17:43.854 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 22:17:43.854 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 22:17:43.854 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 22:17:43.854 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 22:17:43.854 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 22:17:43.854 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-13 22:17:43.854 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 22:17:43.854 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 22:17:43.855 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 22:17:43.855 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 22:17:43.855 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 22:17:43.855 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-13 22:17:45.877 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-13 22:17:45.877 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-13 22:29:59.282 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 22:29:59.283 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 22:29:59.283 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 22:29:59.283 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 22:29:59.283 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 22:29:59.283 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 22:29:59.283 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 22:29:59.284 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-13 22:29:59.284 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 22:29:59.284 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 22:29:59.284 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 22:29:59.284 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 22:29:59.284 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 22:29:59.284 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-13 22:30:01.317 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-13 22:30:01.317 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-13 22:40:18.513 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 22:40:18.514 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 22:40:18.514 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 22:40:18.514 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 22:40:18.514 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 22:40:18.515 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 22:40:18.515 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 22:40:18.515 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-13 22:40:18.515 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 22:40:18.515 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 22:40:18.515 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 22:40:18.516 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 22:40:18.516 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 22:40:18.516 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-13 22:40:20.549 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-13 22:40:20.549 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-13 22:41:37.334 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 22:41:37.335 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 22:41:37.335 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 22:41:37.335 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 22:41:37.336 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 22:41:37.336 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 22:41:37.336 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 22:41:37.336 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-13 22:41:37.336 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 22:41:37.336 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 22:41:37.336 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 22:41:37.336 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 22:41:37.337 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 22:41:37.337 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-13 22:41:39.382 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-13 22:41:39.382 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-13 22:54:17.296 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 22:54:17.297 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 22:54:17.297 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 22:54:17.298 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 22:54:17.298 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 22:54:17.298 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 22:54:17.298 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 22:54:17.298 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-13 22:54:17.299 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 22:54:17.299 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 22:54:17.300 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 22:54:17.300 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 22:54:17.300 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 22:54:17.300 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: 127.0.0.1:2181
+2025-02-13 22:54:19.360 | ERROR    | utils.utils_producer:check_zookeeper_service_is_ready:50 - Error checking Zookeeper readiness: [WinError 10061] No connection could be made because the target machine actively refused it
+2025-02-13 22:54:19.360 | ERROR    | utils.utils_producer:verify_services:82 - Zookeeper is not ready. Please check your Zookeeper setup. Exiting...
+2025-02-13 23:00:07.989 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 23:00:07.990 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 23:00:07.990 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 23:00:07.991 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 23:00:07.991 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 23:00:07.991 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 23:00:07.991 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 23:00:07.991 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-13 23:00:07.991 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 23:00:07.991 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 23:00:07.991 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 23:00:07.992 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 23:00:07.992 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 23:00:07.992 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-13 23:00:07.996 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-13 23:00:07.996 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: 127.0.0.1:9092
+2025-02-13 23:00:10.017 | ERROR    | utils.utils_producer:check_kafka_service_is_ready:70 - Error checking Kafka: NoBrokersAvailable
+2025-02-13 23:00:10.017 | ERROR    | utils.utils_producer:verify_services:89 - Kafka broker is not ready. Please check your Kafka setup. Exiting...
+2025-02-13 23:00:36.798 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 23:00:36.799 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 23:00:36.799 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 23:00:36.800 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 23:00:36.800 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 23:00:36.800 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 23:00:36.800 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 23:00:36.800 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:00:36.800 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 23:00:36.800 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 23:00:36.800 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 23:00:36.800 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 23:00:36.801 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 23:00:36.801 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-13 23:00:36.805 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-13 23:00:36.805 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:00:37.120 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-13 23:00:37.225 | INFO     | __main__:main:162 - Kafka producer connected to localhost:9092
+2025-02-13 23:00:37.227 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:00:37.541 | INFO     | utils.utils_producer:create_kafka_topic:150 - Topic 'buzzline' exists. Clearing it out...
+2025-02-13 23:00:37.542 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:00:37.866 | ERROR    | utils.utils_producer:clear_kafka_topic:226 - Error managing retention for topic 'buzzline': list indices must be integers or slices, not ConfigResource
+2025-02-13 23:00:37.866 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-13 23:00:37.867 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-13 23:00:37.867 | INFO     | __main__:main:178 - {'message': 'I just tried travel! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:00:37', 'category': 'travel', 'sentiment': 0.19, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:00:37.867 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried travel! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:00:37', 'category': 'travel', 'sentiment': 0.19, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:00:37.868 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried travel! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:00:37', 'category': 'travel', 'sentiment': 0.19, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:00:42.869 | INFO     | __main__:main:178 - {'message': 'I just saw Python! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:00:42', 'category': 'tech', 'sentiment': 0.99, 'keyword_mentioned': 'Python', 'message_length': 32}
+2025-02-13 23:00:42.869 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw Python! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:00:42', 'category': 'tech', 'sentiment': 0.99, 'keyword_mentioned': 'Python', 'message_length': 32}
+2025-02-13 23:00:42.870 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw Python! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:00:42', 'category': 'tech', 'sentiment': 0.99, 'keyword_mentioned': 'Python', 'message_length': 32}
+2025-02-13 23:00:46.547 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-13 23:00:46.547 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-13 23:00:46.548 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-13 23:12:06.164 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 23:12:06.165 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 23:12:06.165 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 23:12:06.165 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 23:12:06.166 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 23:12:06.166 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 23:12:06.166 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 23:12:06.166 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:12:06.166 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 23:12:06.167 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 23:12:06.167 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 23:12:06.169 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-13 23:12:06.169 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 23:12:06.170 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 23:12:06.170 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-13 23:12:06.174 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-13 23:12:06.174 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:12:06.487 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-13 23:12:06.594 | INFO     | __main__:main:162 - Kafka producer connected to localhost:9092
+2025-02-13 23:12:06.594 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:12:06.907 | INFO     | utils.utils_producer:create_kafka_topic:150 - Topic 'buzzline' exists. Clearing it out...
+2025-02-13 23:12:06.908 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:12:07.224 | ERROR    | utils.utils_producer:clear_kafka_topic:226 - Error managing retention for topic 'buzzline': list indices must be integers or slices, not ConfigResource
+2025-02-13 23:12:07.225 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-13 23:12:07.225 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-13 23:12:07.226 | INFO     | __main__:main:178 - {'message': 'I just shared JavaScript! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:07', 'category': 'tech', 'sentiment': 0.71, 'keyword_mentioned': 'JavaScript', 'message_length': 41}
+2025-02-13 23:12:07.226 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared JavaScript! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:07', 'category': 'tech', 'sentiment': 0.71, 'keyword_mentioned': 'JavaScript', 'message_length': 41}
+2025-02-13 23:12:07.227 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared JavaScript! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:07', 'category': 'tech', 'sentiment': 0.71, 'keyword_mentioned': 'JavaScript', 'message_length': 41}
+2025-02-13 23:12:12.228 | INFO     | __main__:main:178 - {'message': 'I just saw a movie! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:12', 'category': 'entertainment', 'sentiment': 0.98, 'keyword_mentioned': 'movie', 'message_length': 33}
+2025-02-13 23:12:12.228 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw a movie! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:12', 'category': 'entertainment', 'sentiment': 0.98, 'keyword_mentioned': 'movie', 'message_length': 33}
+2025-02-13 23:12:12.228 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw a movie! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:12', 'category': 'entertainment', 'sentiment': 0.98, 'keyword_mentioned': 'movie', 'message_length': 33}
+2025-02-13 23:12:17.230 | INFO     | __main__:main:178 - {'message': 'I just loved Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:17', 'category': 'tech', 'sentiment': 0.95, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-13 23:12:17.230 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:17', 'category': 'tech', 'sentiment': 0.95, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-13 23:12:17.231 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:17', 'category': 'tech', 'sentiment': 0.95, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-13 23:12:22.232 | INFO     | __main__:main:178 - {'message': 'I just tried a meme! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:22', 'category': 'humor', 'sentiment': 0.97, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-02-13 23:12:22.232 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a meme! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:22', 'category': 'humor', 'sentiment': 0.97, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-02-13 23:12:22.233 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a meme! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:22', 'category': 'humor', 'sentiment': 0.97, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-02-13 23:12:23.028 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 23:12:23.045 | INFO     | __main__:main:167 - Starting Consumer to run continuously.
+2025-02-13 23:12:23.045 | INFO     | __main__:main:168 - Things can fail or get interrupted, so use a try block.
+2025-02-13 23:12:23.045 | INFO     | __main__:main:169 - Moved .env variables into a utils config module.
+2025-02-13 23:12:23.045 | INFO     | __main__:main:171 - STEP 1. Read environment variables using new config functions.
+2025-02-13 23:12:23.045 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 23:12:23.045 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:12:23.046 | INFO     | utils.utils_config:get_kafka_consumer_group_id:72 - BUZZ_CONSUMER_GROUP_ID: buzz_group
+2025-02-13 23:12:23.046 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 23:12:23.046 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 23:12:23.046 | INFO     | utils.utils_config:get_sqlite_path:96 - SQLITE_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite
+2025-02-13 23:12:23.046 | INFO     | __main__:main:178 - SUCCESS: Read environment variables.
+2025-02-13 23:12:23.046 | INFO     | __main__:main:183 - STEP 2. Delete any prior database file for a fresh start.
+2025-02-13 23:12:23.049 | INFO     | __main__:main:187 - SUCCESS: Deleted database file.
+2025-02-13 23:12:23.049 | INFO     | __main__:main:192 - STEP 3. Initialize a new database with an empty table.
+2025-02-13 23:12:23.049 | INFO     | consumers.db_sqlite_case:init_db:48 - Calling SQLite init_db() with {db_path=}.
+2025-02-13 23:12:23.051 | INFO     | consumers.db_sqlite_case:init_db:55 - SUCCESS: Got a cursor to execute SQL.
+2025-02-13 23:12:23.068 | INFO     | consumers.db_sqlite_case:init_db:74 - SUCCESS: Database initialized and table ready at C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite.
+2025-02-13 23:12:23.069 | INFO     | __main__:main:199 - STEP 4. Begin consuming and storing messages.
+2025-02-13 23:12:23.069 | INFO     | __main__:consume_messages_from_kafka:100 - Called consume_messages_from_kafka() with:
+2025-02-13 23:12:23.069 | INFO     | __main__:consume_messages_from_kafka:101 -    topic='buzzline'
+2025-02-13 23:12:23.069 | INFO     | __main__:consume_messages_from_kafka:102 -    kafka_url='localhost:9092'
+2025-02-13 23:12:23.069 | INFO     | __main__:consume_messages_from_kafka:103 -    group='buzz_group'
+2025-02-13 23:12:23.069 | INFO     | __main__:consume_messages_from_kafka:104 -    sql_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:12:23.070 | INFO     | __main__:consume_messages_from_kafka:105 -    interval_secs=5
+2025-02-13 23:12:23.070 | INFO     | __main__:consume_messages_from_kafka:107 - Step 1. Verify Kafka Services.
+2025-02-13 23:12:23.070 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-13 23:12:23.074 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-13 23:12:23.074 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:12:23.388 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-13 23:12:23.389 | INFO     | __main__:consume_messages_from_kafka:114 - Step 2. Create a Kafka consumer.
+2025-02-13 23:12:23.389 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:12:23.389 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline' and group ID='buzz_group'.
+2025-02-13 23:12:23.493 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-13 23:12:23.494 | INFO     | __main__:consume_messages_from_kafka:125 - Step 3. Verify topic exists.
+2025-02-13 23:12:23.494 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:12:23.806 | INFO     | utils.utils_producer:is_topic_available:252 - Topic 'buzzline' already exists. 
+2025-02-13 23:12:23.807 | INFO     | __main__:consume_messages_from_kafka:129 - Kafka topic 'buzzline' is ready.
+2025-02-13 23:12:23.807 | INFO     | __main__:consume_messages_from_kafka:136 - Step 4. Process messages.
+2025-02-13 23:12:23.812 | ERROR    | __main__:consume_messages_from_kafka:152 - ERROR: Could not consume messages from Kafka: Invalid file descriptor: -1
+2025-02-13 23:12:23.812 | ERROR    | __main__:main:207 - Unexpected error: Invalid file descriptor: -1
+2025-02-13 23:12:23.814 | INFO     | __main__:main:209 - Consumer shutting down.
+2025-02-13 23:12:27.234 | INFO     | __main__:main:178 - {'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:27', 'category': 'travel', 'sentiment': 0.46, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:12:27.234 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:27', 'category': 'travel', 'sentiment': 0.46, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:12:27.234 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:27', 'category': 'travel', 'sentiment': 0.46, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:12:32.235 | INFO     | __main__:main:178 - {'message': 'I just shared a story! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:32', 'category': 'other', 'sentiment': 0.03, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-13 23:12:32.235 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a story! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:32', 'category': 'other', 'sentiment': 0.03, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-13 23:12:32.237 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a story! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:32', 'category': 'other', 'sentiment': 0.03, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-13 23:12:37.237 | INFO     | __main__:main:178 - {'message': 'I just saw a movie! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:37', 'category': 'entertainment', 'sentiment': 0.06, 'keyword_mentioned': 'movie', 'message_length': 34}
+2025-02-13 23:12:37.237 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw a movie! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:37', 'category': 'entertainment', 'sentiment': 0.06, 'keyword_mentioned': 'movie', 'message_length': 34}
+2025-02-13 23:12:37.237 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw a movie! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:37', 'category': 'entertainment', 'sentiment': 0.06, 'keyword_mentioned': 'movie', 'message_length': 34}
+2025-02-13 23:12:42.239 | INFO     | __main__:main:178 - {'message': 'I just saw a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:42', 'category': 'other', 'sentiment': 0.32, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-13 23:12:42.239 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:42', 'category': 'other', 'sentiment': 0.32, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-13 23:12:42.239 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:42', 'category': 'other', 'sentiment': 0.32, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-13 23:12:47.241 | INFO     | __main__:main:178 - {'message': 'I just found a trick! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-13 23:12:47', 'category': 'other', 'sentiment': 0.53, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 23:12:47.241 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found a trick! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-13 23:12:47', 'category': 'other', 'sentiment': 0.53, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 23:12:47.242 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found a trick! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-13 23:12:47', 'category': 'other', 'sentiment': 0.53, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 23:12:52.243 | INFO     | __main__:main:178 - {'message': 'I just shared a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:52', 'category': 'entertainment', 'sentiment': 0.16, 'keyword_mentioned': 'movie', 'message_length': 38}
+2025-02-13 23:12:52.243 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:52', 'category': 'entertainment', 'sentiment': 0.16, 'keyword_mentioned': 'movie', 'message_length': 38}
+2025-02-13 23:12:52.244 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:52', 'category': 'entertainment', 'sentiment': 0.16, 'keyword_mentioned': 'movie', 'message_length': 38}
+2025-02-13 23:12:57.244 | INFO     | __main__:main:178 - {'message': 'I just tried travel! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:57', 'category': 'travel', 'sentiment': 0.12, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:12:57.245 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried travel! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:57', 'category': 'travel', 'sentiment': 0.12, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:12:57.246 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried travel! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:57', 'category': 'travel', 'sentiment': 0.12, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:13:02.246 | INFO     | __main__:main:178 - {'message': 'I just loved travel! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:02', 'category': 'travel', 'sentiment': 0.58, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-13 23:13:02.246 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved travel! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:02', 'category': 'travel', 'sentiment': 0.58, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-13 23:13:02.247 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved travel! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:02', 'category': 'travel', 'sentiment': 0.58, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-13 23:13:07.249 | INFO     | __main__:main:178 - {'message': 'I just loved a meme! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:07', 'category': 'humor', 'sentiment': 0.18, 'keyword_mentioned': 'meme', 'message_length': 36}
+2025-02-13 23:13:07.249 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a meme! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:07', 'category': 'humor', 'sentiment': 0.18, 'keyword_mentioned': 'meme', 'message_length': 36}
+2025-02-13 23:13:07.250 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a meme! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:07', 'category': 'humor', 'sentiment': 0.18, 'keyword_mentioned': 'meme', 'message_length': 36}
+2025-02-13 23:13:12.251 | INFO     | __main__:main:178 - {'message': 'I just tried recipe! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:12', 'category': 'food', 'sentiment': 0.09, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-13 23:13:12.251 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried recipe! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:12', 'category': 'food', 'sentiment': 0.09, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-13 23:13:12.251 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried recipe! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:12', 'category': 'food', 'sentiment': 0.09, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-13 23:13:17.252 | INFO     | __main__:main:178 - {'message': 'I just loved game! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:13:17', 'category': 'gaming', 'sentiment': 0.45, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-13 23:13:17.252 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved game! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:13:17', 'category': 'gaming', 'sentiment': 0.45, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-13 23:13:17.254 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved game! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:13:17', 'category': 'gaming', 'sentiment': 0.45, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-13 23:13:22.254 | INFO     | __main__:main:178 - {'message': 'I just found travel! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:22', 'category': 'travel', 'sentiment': 0.91, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-13 23:13:22.254 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found travel! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:22', 'category': 'travel', 'sentiment': 0.91, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-13 23:13:22.255 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found travel! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:22', 'category': 'travel', 'sentiment': 0.91, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-13 23:13:26.982 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-13 23:13:26.983 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-13 23:13:26.983 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-13 23:14:01.847 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 23:14:01.851 | INFO     | __main__:main:143 - Starting Consumer to run continuously.
+2025-02-13 23:14:01.851 | INFO     | __main__:main:144 - Things can fail or get interrupted, so use a try block.
+2025-02-13 23:14:01.851 | INFO     | __main__:main:145 - Moved .env variables into a utils config module.
+2025-02-13 23:14:01.851 | INFO     | __main__:main:147 - STEP 1. Read environment variables using new config functions.
+2025-02-13 23:14:01.851 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 23:14:01.852 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 23:14:01.852 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 23:14:01.852 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 23:14:01.852 | INFO     | utils.utils_config:get_sqlite_path:96 - SQLITE_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite
+2025-02-13 23:14:01.852 | INFO     | __main__:main:152 - SUCCESS: Read environment variables.
+2025-02-13 23:14:01.853 | INFO     | __main__:main:157 - STEP 2. Delete any prior database file for a fresh start.
+2025-02-13 23:14:01.856 | INFO     | __main__:main:161 - SUCCESS: Deleted database file.
+2025-02-13 23:14:01.856 | INFO     | __main__:main:166 - STEP 3. Initialize a new database with an empty table.
+2025-02-13 23:14:01.856 | INFO     | consumers.db_sqlite_case:init_db:48 - Calling SQLite init_db() with {db_path=}.
+2025-02-13 23:14:01.857 | INFO     | consumers.db_sqlite_case:init_db:55 - SUCCESS: Got a cursor to execute SQL.
+2025-02-13 23:14:01.869 | INFO     | consumers.db_sqlite_case:init_db:74 - SUCCESS: Database initialized and table ready at C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite.
+2025-02-13 23:14:01.869 | INFO     | __main__:main:173 - STEP 4. Begin consuming and storing messages.
+2025-02-13 23:14:01.869 | INFO     | __main__:consume_messages_from_file:83 - Called consume_messages_from_file() with:
+2025-02-13 23:14:01.870 | INFO     | __main__:consume_messages_from_file:84 -    live_data_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/project_live.json')
+2025-02-13 23:14:01.870 | INFO     | __main__:consume_messages_from_file:85 -    sql_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:01.870 | INFO     | __main__:consume_messages_from_file:86 -    interval_secs=5
+2025-02-13 23:14:01.870 | INFO     | __main__:consume_messages_from_file:87 -    last_position=0
+2025-02-13 23:14:01.870 | INFO     | __main__:consume_messages_from_file:89 - 1. Initialize the database.
+2025-02-13 23:14:01.870 | INFO     | consumers.db_sqlite_case:init_db:48 - Calling SQLite init_db() with {db_path=}.
+2025-02-13 23:14:01.871 | INFO     | consumers.db_sqlite_case:init_db:55 - SUCCESS: Got a cursor to execute SQL.
+2025-02-13 23:14:01.889 | INFO     | consumers.db_sqlite_case:init_db:74 - SUCCESS: Database initialized and table ready at C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite.
+2025-02-13 23:14:01.889 | INFO     | __main__:consume_messages_from_file:92 - 2. Set the last position to 0 to start at the beginning of the file.
+2025-02-13 23:14:01.889 | INFO     | __main__:consume_messages_from_file:97 - 3. Read from live data file at position 0.
+2025-02-13 23:14:01.895 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just shared JavaScript! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:07', 'category': 'tech', 'sentiment': 0.71, 'keyword_mentioned': 'JavaScript', 'message_length': 41}
+2025-02-13 23:14:01.896 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:01.896 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just shared JavaScript! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:07', 'category': 'tech', 'sentiment': 0.71, 'keyword_mentioned': 'JavaScript', 'message_length': 41}
+2025-02-13 23:14:01.896 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:01.906 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:01.906 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just saw a movie! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:12', 'category': 'entertainment', 'sentiment': 0.98, 'keyword_mentioned': 'movie', 'message_length': 33}
+2025-02-13 23:14:01.906 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:01.906 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just saw a movie! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:12', 'category': 'entertainment', 'sentiment': 0.98, 'keyword_mentioned': 'movie', 'message_length': 33}
+2025-02-13 23:14:01.907 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:01.916 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:01.916 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just loved Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:17', 'category': 'tech', 'sentiment': 0.95, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-13 23:14:01.916 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:01.916 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just loved Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:17', 'category': 'tech', 'sentiment': 0.95, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-13 23:14:01.917 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:01.926 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:01.926 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just tried a meme! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:22', 'category': 'humor', 'sentiment': 0.97, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-02-13 23:14:01.926 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:01.926 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just tried a meme! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:22', 'category': 'humor', 'sentiment': 0.97, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-02-13 23:14:01.926 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:01.936 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:01.936 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:27', 'category': 'travel', 'sentiment': 0.46, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:14:01.937 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:01.937 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:27', 'category': 'travel', 'sentiment': 0.46, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:14:01.937 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:01.946 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:01.946 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just shared a story! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:32', 'category': 'other', 'sentiment': 0.03, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-13 23:14:01.946 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:01.946 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just shared a story! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:32', 'category': 'other', 'sentiment': 0.03, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-13 23:14:01.947 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:01.956 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:01.956 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just saw a movie! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:37', 'category': 'entertainment', 'sentiment': 0.06, 'keyword_mentioned': 'movie', 'message_length': 34}
+2025-02-13 23:14:01.957 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:01.957 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just saw a movie! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:37', 'category': 'entertainment', 'sentiment': 0.06, 'keyword_mentioned': 'movie', 'message_length': 34}
+2025-02-13 23:14:01.957 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:01.966 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:01.966 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just saw a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:42', 'category': 'other', 'sentiment': 0.32, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-13 23:14:01.966 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:01.967 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just saw a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:42', 'category': 'other', 'sentiment': 0.32, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-13 23:14:01.967 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:01.976 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:01.976 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just found a trick! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-13 23:12:47', 'category': 'other', 'sentiment': 0.53, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 23:14:01.977 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:01.977 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just found a trick! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-13 23:12:47', 'category': 'other', 'sentiment': 0.53, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 23:14:01.977 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:01.987 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:01.987 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just shared a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:52', 'category': 'entertainment', 'sentiment': 0.16, 'keyword_mentioned': 'movie', 'message_length': 38}
+2025-02-13 23:14:01.987 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:01.987 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just shared a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:52', 'category': 'entertainment', 'sentiment': 0.16, 'keyword_mentioned': 'movie', 'message_length': 38}
+2025-02-13 23:14:01.988 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:01.996 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:01.996 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just tried travel! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:57', 'category': 'travel', 'sentiment': 0.12, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:14:01.997 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:01.997 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just tried travel! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:57', 'category': 'travel', 'sentiment': 0.12, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:14:01.997 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:02.006 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:02.006 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just loved travel! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:02', 'category': 'travel', 'sentiment': 0.58, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-13 23:14:02.006 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:02.006 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just loved travel! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:02', 'category': 'travel', 'sentiment': 0.58, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-13 23:14:02.007 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:02.015 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:02.016 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just loved a meme! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:07', 'category': 'humor', 'sentiment': 0.18, 'keyword_mentioned': 'meme', 'message_length': 36}
+2025-02-13 23:14:02.016 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:02.016 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just loved a meme! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:07', 'category': 'humor', 'sentiment': 0.18, 'keyword_mentioned': 'meme', 'message_length': 36}
+2025-02-13 23:14:02.016 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:02.025 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:02.026 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just tried recipe! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:12', 'category': 'food', 'sentiment': 0.09, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-13 23:14:02.026 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:02.026 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just tried recipe! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:12', 'category': 'food', 'sentiment': 0.09, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-13 23:14:02.026 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:02.036 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:02.036 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just loved game! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:13:17', 'category': 'gaming', 'sentiment': 0.45, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-13 23:14:02.036 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:02.036 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just loved game! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:13:17', 'category': 'gaming', 'sentiment': 0.45, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-13 23:14:02.036 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:02.045 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:02.045 | INFO     | __main__:process_message:60 - Processed message: {'message': 'I just found travel! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:22', 'category': 'travel', 'sentiment': 0.91, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-13 23:14:02.046 | INFO     | consumers.db_sqlite_case:insert_message:92 - Calling SQLite insert_message() with:
+2025-02-13 23:14:02.046 | INFO     | consumers.db_sqlite_case:insert_message:93 - message={'message': 'I just found travel! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:22', 'category': 'travel', 'sentiment': 0.91, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-13 23:14:02.046 | INFO     | consumers.db_sqlite_case:insert_message:94 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-13 23:14:02.054 | INFO     | consumers.db_sqlite_case:insert_message:117 - Inserted one message into the database.
+2025-02-13 23:14:02.054 | INFO     | __main__:main:181 - TRY/FINALLY: Consumer shutting down.
+2025-02-13 23:16:16.794 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 23:16:16.795 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 23:16:16.795 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 23:16:16.795 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 23:16:16.795 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 23:16:16.795 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 23:16:16.795 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 23:16:16.795 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:16:16.796 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 23:16:16.796 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 23:16:16.796 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 23:16:16.800 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-13 23:16:16.800 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 23:16:16.800 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 23:16:16.801 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-13 23:16:16.805 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-13 23:16:16.805 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:16:17.119 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-13 23:16:17.222 | INFO     | __main__:main:162 - Kafka producer connected to localhost:9092
+2025-02-13 23:16:17.223 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:16:17.536 | INFO     | utils.utils_producer:create_kafka_topic:150 - Topic 'buzzline' exists. Clearing it out...
+2025-02-13 23:16:17.536 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:16:17.854 | ERROR    | utils.utils_producer:clear_kafka_topic:226 - Error managing retention for topic 'buzzline': list indices must be integers or slices, not ConfigResource
+2025-02-13 23:16:17.855 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-13 23:16:17.855 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-13 23:16:17.855 | INFO     | __main__:main:178 - {'message': 'I just shared game! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 23:16:17', 'category': 'gaming', 'sentiment': 0.84, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-13 23:16:17.856 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared game! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 23:16:17', 'category': 'gaming', 'sentiment': 0.84, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-13 23:16:17.856 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared game! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 23:16:17', 'category': 'gaming', 'sentiment': 0.84, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-13 23:16:22.857 | INFO     | __main__:main:178 - {'message': 'I just found Python! It was exciting.', 'author': 'Bob', 'timestamp': '2025-02-13 23:16:22', 'category': 'tech', 'sentiment': 0.33, 'keyword_mentioned': 'Python', 'message_length': 37}
+2025-02-13 23:16:22.858 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found Python! It was exciting.', 'author': 'Bob', 'timestamp': '2025-02-13 23:16:22', 'category': 'tech', 'sentiment': 0.33, 'keyword_mentioned': 'Python', 'message_length': 37}
+2025-02-13 23:16:22.858 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found Python! It was exciting.', 'author': 'Bob', 'timestamp': '2025-02-13 23:16:22', 'category': 'tech', 'sentiment': 0.33, 'keyword_mentioned': 'Python', 'message_length': 37}
+2025-02-13 23:16:27.859 | INFO     | __main__:main:178 - {'message': 'I just loved a story! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:27', 'category': 'other', 'sentiment': 0.32, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 23:16:27.859 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a story! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:27', 'category': 'other', 'sentiment': 0.32, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 23:16:27.869 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a story! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:27', 'category': 'other', 'sentiment': 0.32, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-13 23:16:32.870 | INFO     | __main__:main:178 - {'message': 'I just shared game! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:32', 'category': 'gaming', 'sentiment': 0.79, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-13 23:16:32.870 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared game! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:32', 'category': 'gaming', 'sentiment': 0.79, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-13 23:16:32.870 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared game! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:32', 'category': 'gaming', 'sentiment': 0.79, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-13 23:16:33.884 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-13 23:16:33.884 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-13 23:16:33.885 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-13 23:16:43.906 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-13 23:16:43.907 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-13 23:16:43.907 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-13 23:16:43.907 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-13 23:16:43.907 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-13 23:16:43.907 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-13 23:16:43.908 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-13 23:16:43.908 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:16:43.908 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-13 23:16:43.909 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-13 23:16:43.909 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-13 23:16:43.912 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-13 23:16:43.912 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-13 23:16:43.912 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-13 23:16:43.912 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-13 23:16:43.917 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-13 23:16:43.917 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:16:44.230 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-13 23:16:44.335 | INFO     | __main__:main:162 - Kafka producer connected to localhost:9092
+2025-02-13 23:16:44.335 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:16:44.649 | INFO     | utils.utils_producer:create_kafka_topic:150 - Topic 'buzzline' exists. Clearing it out...
+2025-02-13 23:16:44.649 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-13 23:16:44.965 | ERROR    | utils.utils_producer:clear_kafka_topic:226 - Error managing retention for topic 'buzzline': list indices must be integers or slices, not ConfigResource
+2025-02-13 23:16:44.966 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-13 23:16:44.966 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-13 23:16:44.966 | INFO     | __main__:main:178 - {'message': 'I just shared a movie! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:44', 'category': 'entertainment', 'sentiment': 0.55, 'keyword_mentioned': 'movie', 'message_length': 39}
+2025-02-13 23:16:44.967 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a movie! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:44', 'category': 'entertainment', 'sentiment': 0.55, 'keyword_mentioned': 'movie', 'message_length': 39}
+2025-02-13 23:16:44.967 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a movie! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:44', 'category': 'entertainment', 'sentiment': 0.55, 'keyword_mentioned': 'movie', 'message_length': 39}
+2025-02-13 23:16:49.969 | INFO     | __main__:main:178 - {'message': 'I just found travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-13 23:16:49', 'category': 'travel', 'sentiment': 0.58, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-13 23:16:49.969 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-13 23:16:49', 'category': 'travel', 'sentiment': 0.58, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-13 23:16:49.970 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-13 23:16:49', 'category': 'travel', 'sentiment': 0.58, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-13 23:16:54.971 | INFO     | __main__:main:178 - {'message': 'I just found game! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-13 23:16:54', 'category': 'gaming', 'sentiment': 0.09, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-13 23:16:54.972 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found game! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-13 23:16:54', 'category': 'gaming', 'sentiment': 0.09, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-13 23:16:54.981 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found game! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-13 23:16:54', 'category': 'gaming', 'sentiment': 0.09, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-13 23:16:59.982 | INFO     | __main__:main:178 - {'message': 'I just saw a movie! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-13 23:16:59', 'category': 'entertainment', 'sentiment': 0.92, 'keyword_mentioned': 'movie', 'message_length': 33}
+2025-02-13 23:16:59.982 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw a movie! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-13 23:16:59', 'category': 'entertainment', 'sentiment': 0.92, 'keyword_mentioned': 'movie', 'message_length': 33}
+2025-02-13 23:16:59.983 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw a movie! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-13 23:16:59', 'category': 'entertainment', 'sentiment': 0.92, 'keyword_mentioned': 'movie', 'message_length': 33}
+2025-02-13 23:17:04.984 | INFO     | __main__:main:178 - {'message': 'I just tried a story! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:17:04', 'category': 'other', 'sentiment': 0.22, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-13 23:17:04.984 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a story! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:17:04', 'category': 'other', 'sentiment': 0.22, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-13 23:17:04.984 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a story! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:17:04', 'category': 'other', 'sentiment': 0.22, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-13 23:17:09.986 | INFO     | __main__:main:178 - {'message': 'I just shared a meme! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:09', 'category': 'humor', 'sentiment': 0.54, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-13 23:17:09.986 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a meme! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:09', 'category': 'humor', 'sentiment': 0.54, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-13 23:17:09.987 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a meme! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:09', 'category': 'humor', 'sentiment': 0.54, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-13 23:17:14.988 | INFO     | __main__:main:178 - {'message': 'I just loved JavaScript! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:14', 'category': 'tech', 'sentiment': 0.59, 'keyword_mentioned': 'JavaScript', 'message_length': 40}
+2025-02-13 23:17:14.988 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved JavaScript! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:14', 'category': 'tech', 'sentiment': 0.59, 'keyword_mentioned': 'JavaScript', 'message_length': 40}
+2025-02-13 23:17:14.988 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved JavaScript! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:14', 'category': 'tech', 'sentiment': 0.59, 'keyword_mentioned': 'JavaScript', 'message_length': 40}
+2025-02-13 23:17:19.989 | INFO     | __main__:main:178 - {'message': 'I just shared a story! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-13 23:17:19', 'category': 'other', 'sentiment': 0.65, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-13 23:17:19.989 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a story! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-13 23:17:19', 'category': 'other', 'sentiment': 0.65, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-13 23:17:19.990 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a story! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-13 23:17:19', 'category': 'other', 'sentiment': 0.65, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-13 23:17:24.991 | INFO     | __main__:main:178 - {'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:24', 'category': 'travel', 'sentiment': 0.7, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:17:24.992 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:24', 'category': 'travel', 'sentiment': 0.7, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:17:24.993 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:24', 'category': 'travel', 'sentiment': 0.7, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-13 23:17:29.994 | INFO     | __main__:main:178 - {'message': 'I just loved an app! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:29', 'category': 'other', 'sentiment': 0.75, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-13 23:17:29.994 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved an app! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:29', 'category': 'other', 'sentiment': 0.75, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-13 23:17:29.995 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved an app! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:29', 'category': 'other', 'sentiment': 0.75, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-13 23:17:30.781 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-13 23:17:30.782 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-13 23:17:30.782 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
