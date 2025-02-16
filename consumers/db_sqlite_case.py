@@ -60,13 +60,9 @@ def init_db(db_path: pathlib.Path):
                 """
                 CREATE TABLE IF NOT EXISTS streamed_messages (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    message TEXT,
-                    author TEXT,
-                    timestamp TEXT,
                     category TEXT,
                     sentiment REAL,
-                    keyword_mentioned TEXT,
-                    message_length INTEGER
+                    sentiment_level TEXT
                 )
             """
             )
@@ -100,17 +96,13 @@ def insert_message(message: dict, db_path: pathlib.Path) -> None:
             cursor.execute(
                 """
                 INSERT INTO streamed_messages (
-                    message, author, timestamp, category, sentiment, keyword_mentioned, message_length
-                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                    category, sentiment, sentiment_level
+                ) VALUES (?, ?, ?)
             """,
                 (
-                    message["message"],
-                    message["author"],
-                    message["timestamp"],
                     message["category"],
                     message["sentiment"],
-                    message["keyword_mentioned"],
-                    message["message_length"],
+                    message["sentiment_level"],
                 ),
             )
             conn.commit()
@@ -158,13 +150,9 @@ def main():
     logger.info(f"Initialized database file at {TEST_DB_PATH}.")
 
     test_message = {
-        "message": "I just shared a meme! It was amazing.",
-        "author": "Charlie",
-        "timestamp": "2025-01-29 14:35:20",
         "category": "humor",
         "sentiment": 0.87,
-        "keyword_mentioned": "meme",
-        "message_length": 42,
+        "keyword_level": "high",
     }
 
     insert_message(test_message, TEST_DB_PATH)

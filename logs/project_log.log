@@ -1671,3 +1671,985 @@
 2025-02-13 23:17:30.781 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
 2025-02-13 23:17:30.782 | INFO     | __main__:main:198 - Kafka producer closed.
 2025-02-13 23:17:30.782 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-16 11:05:07.306 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-16 11:05:07.307 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-16 11:05:07.307 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-16 11:05:07.307 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-16 11:05:07.307 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-16 11:05:07.307 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-16 11:05:07.307 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-16 11:05:07.308 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:05:07.308 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-16 11:05:07.308 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-16 11:05:07.308 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-16 11:05:07.311 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-16 11:05:07.311 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-16 11:05:07.311 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-16 11:05:07.311 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-16 11:05:07.318 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-16 11:05:07.318 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:05:07.641 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-16 11:05:07.746 | INFO     | __main__:main:162 - Kafka producer connected to localhost:9092
+2025-02-16 11:05:07.746 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:05:08.061 | INFO     | utils.utils_producer:create_kafka_topic:150 - Topic 'buzzline' exists. Clearing it out...
+2025-02-16 11:05:08.061 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:05:08.391 | ERROR    | utils.utils_producer:clear_kafka_topic:226 - Error managing retention for topic 'buzzline': list indices must be integers or slices, not ConfigResource
+2025-02-16 11:05:08.392 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-16 11:05:08.392 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-16 11:05:08.392 | INFO     | __main__:main:178 - {'message': 'I just saw a story! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:05:08', 'category': 'other', 'sentiment': 0.23, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-16 11:05:08.393 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw a story! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:05:08', 'category': 'other', 'sentiment': 0.23, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-16 11:05:08.393 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw a story! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:05:08', 'category': 'other', 'sentiment': 0.23, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-16 11:05:13.395 | INFO     | __main__:main:178 - {'message': 'I just loved a movie! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:05:13', 'category': 'entertainment', 'sentiment': 0.56, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:05:13.395 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a movie! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:05:13', 'category': 'entertainment', 'sentiment': 0.56, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:05:13.396 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a movie! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:05:13', 'category': 'entertainment', 'sentiment': 0.56, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:05:18.396 | INFO     | __main__:main:178 - {'message': 'I just loved a movie! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:05:18', 'category': 'entertainment', 'sentiment': 0.59, 'keyword_mentioned': 'movie', 'message_length': 35}
+2025-02-16 11:05:18.396 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a movie! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:05:18', 'category': 'entertainment', 'sentiment': 0.59, 'keyword_mentioned': 'movie', 'message_length': 35}
+2025-02-16 11:05:18.407 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a movie! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:05:18', 'category': 'entertainment', 'sentiment': 0.59, 'keyword_mentioned': 'movie', 'message_length': 35}
+2025-02-16 11:05:23.408 | INFO     | __main__:main:178 - {'message': 'I just found a story! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:05:23', 'category': 'other', 'sentiment': 0.42, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:05:23.408 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found a story! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:05:23', 'category': 'other', 'sentiment': 0.42, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:05:23.409 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found a story! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:05:23', 'category': 'other', 'sentiment': 0.42, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:05:25.842 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-16 11:05:25.849 | INFO     | __main__:main:167 - Starting Consumer to run continuously.
+2025-02-16 11:05:25.849 | INFO     | __main__:main:168 - Things can fail or get interrupted, so use a try block.
+2025-02-16 11:05:25.849 | INFO     | __main__:main:169 - Moved .env variables into a utils config module.
+2025-02-16 11:05:25.849 | INFO     | __main__:main:171 - STEP 1. Read environment variables using new config functions.
+2025-02-16 11:05:25.849 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-16 11:05:25.849 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:05:25.849 | INFO     | utils.utils_config:get_kafka_consumer_group_id:72 - BUZZ_CONSUMER_GROUP_ID: buzz_group
+2025-02-16 11:05:25.849 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-16 11:05:25.849 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-16 11:05:25.849 | INFO     | utils.utils_config:get_sqlite_path:96 - SQLITE_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite
+2025-02-16 11:05:25.850 | INFO     | __main__:main:178 - SUCCESS: Read environment variables.
+2025-02-16 11:05:25.850 | INFO     | __main__:main:183 - STEP 2. Delete any prior database file for a fresh start.
+2025-02-16 11:05:25.852 | INFO     | __main__:main:187 - SUCCESS: Deleted database file.
+2025-02-16 11:05:25.852 | INFO     | __main__:main:192 - STEP 3. Initialize a new database with an empty table.
+2025-02-16 11:05:25.853 | INFO     | consumers.db_sqlite_case:init_db:48 - Calling SQLite init_db() with {db_path=}.
+2025-02-16 11:05:25.855 | INFO     | consumers.db_sqlite_case:init_db:55 - SUCCESS: Got a cursor to execute SQL.
+2025-02-16 11:05:25.870 | INFO     | consumers.db_sqlite_case:init_db:74 - SUCCESS: Database initialized and table ready at C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite.
+2025-02-16 11:05:25.870 | INFO     | __main__:main:199 - STEP 4. Begin consuming and storing messages.
+2025-02-16 11:05:25.870 | INFO     | __main__:consume_messages_from_kafka:100 - Called consume_messages_from_kafka() with:
+2025-02-16 11:05:25.870 | INFO     | __main__:consume_messages_from_kafka:101 -    topic='buzzline'
+2025-02-16 11:05:25.870 | INFO     | __main__:consume_messages_from_kafka:102 -    kafka_url='localhost:9092'
+2025-02-16 11:05:25.870 | INFO     | __main__:consume_messages_from_kafka:103 -    group='buzz_group'
+2025-02-16 11:05:25.871 | INFO     | __main__:consume_messages_from_kafka:104 -    sql_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:05:25.871 | INFO     | __main__:consume_messages_from_kafka:105 -    interval_secs=5
+2025-02-16 11:05:25.871 | INFO     | __main__:consume_messages_from_kafka:107 - Step 1. Verify Kafka Services.
+2025-02-16 11:05:25.871 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-16 11:05:25.875 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-16 11:05:25.875 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:05:26.186 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-16 11:05:26.187 | INFO     | __main__:consume_messages_from_kafka:114 - Step 2. Create a Kafka consumer.
+2025-02-16 11:05:26.187 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:05:26.187 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline' and group ID='buzz_group'.
+2025-02-16 11:05:26.291 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-16 11:05:26.291 | INFO     | __main__:consume_messages_from_kafka:125 - Step 3. Verify topic exists.
+2025-02-16 11:05:26.291 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:05:26.603 | INFO     | utils.utils_producer:is_topic_available:252 - Topic 'buzzline' already exists. 
+2025-02-16 11:05:26.603 | INFO     | __main__:consume_messages_from_kafka:129 - Kafka topic 'buzzline' is ready.
+2025-02-16 11:05:26.603 | INFO     | __main__:consume_messages_from_kafka:136 - Step 4. Process messages.
+2025-02-16 11:05:26.607 | ERROR    | __main__:consume_messages_from_kafka:152 - ERROR: Could not consume messages from Kafka: Invalid file descriptor: -1
+2025-02-16 11:05:26.617 | ERROR    | __main__:main:207 - Unexpected error: Invalid file descriptor: -1
+2025-02-16 11:05:26.617 | INFO     | __main__:main:209 - Consumer shutting down.
+2025-02-16 11:05:28.410 | INFO     | __main__:main:178 - {'message': 'I just found a story! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:05:28', 'category': 'other', 'sentiment': 0.12, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-16 11:05:28.410 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found a story! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:05:28', 'category': 'other', 'sentiment': 0.12, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-16 11:05:28.411 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found a story! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:05:28', 'category': 'other', 'sentiment': 0.12, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-16 11:05:33.412 | INFO     | __main__:main:178 - {'message': 'I just loved a meme! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:05:33', 'category': 'humor', 'sentiment': 0.49, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:05:33.412 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a meme! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:05:33', 'category': 'humor', 'sentiment': 0.49, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:05:33.413 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a meme! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:05:33', 'category': 'humor', 'sentiment': 0.49, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:05:35.666 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-16 11:05:35.666 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-16 11:05:35.667 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-16 11:09:53.214 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-16 11:09:53.215 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-16 11:09:53.215 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-16 11:09:53.215 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-16 11:09:53.215 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-16 11:09:53.215 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-16 11:09:53.215 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-16 11:09:53.215 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:09:53.216 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-16 11:09:53.216 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-16 11:09:53.216 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-16 11:09:53.219 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-16 11:09:53.219 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-16 11:09:53.220 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-16 11:09:53.220 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-16 11:09:53.224 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-16 11:09:53.224 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:09:53.535 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-16 11:09:53.640 | INFO     | __main__:main:162 - Kafka producer connected to localhost:9092
+2025-02-16 11:09:53.640 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:09:53.952 | INFO     | utils.utils_producer:create_kafka_topic:150 - Topic 'buzzline' exists. Clearing it out...
+2025-02-16 11:09:53.952 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:09:54.264 | ERROR    | utils.utils_producer:clear_kafka_topic:226 - Error managing retention for topic 'buzzline': list indices must be integers or slices, not ConfigResource
+2025-02-16 11:09:54.265 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-16 11:09:54.265 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-16 11:09:54.265 | INFO     | __main__:main:178 - {'message': 'I just tried a meme! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:09:54', 'category': 'humor', 'sentiment': 0.75, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-02-16 11:09:54.266 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a meme! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:09:54', 'category': 'humor', 'sentiment': 0.75, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-02-16 11:09:54.266 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a meme! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:09:54', 'category': 'humor', 'sentiment': 0.75, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-02-16 11:09:58.934 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-16 11:09:58.952 | INFO     | __main__:main:172 - Starting Consumer to run continuously.
+2025-02-16 11:09:58.952 | INFO     | __main__:main:173 - Things can fail or get interrupted, so use a try block.
+2025-02-16 11:09:58.952 | INFO     | __main__:main:174 - Moved .env variables into a utils config module.
+2025-02-16 11:09:58.952 | INFO     | __main__:main:176 - STEP 1. Read environment variables using new config functions.
+2025-02-16 11:09:58.953 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-16 11:09:58.953 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:09:58.953 | INFO     | utils.utils_config:get_kafka_consumer_group_id:72 - BUZZ_CONSUMER_GROUP_ID: buzz_group
+2025-02-16 11:09:58.953 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-16 11:09:58.953 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-16 11:09:58.953 | INFO     | utils.utils_config:get_sqlite_path:96 - SQLITE_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite
+2025-02-16 11:09:58.954 | INFO     | __main__:main:183 - SUCCESS: Read environment variables.
+2025-02-16 11:09:58.954 | INFO     | __main__:main:188 - STEP 2. Delete any prior database file for a fresh start.
+2025-02-16 11:09:58.956 | INFO     | __main__:main:192 - SUCCESS: Deleted database file.
+2025-02-16 11:09:58.956 | INFO     | __main__:main:197 - STEP 3. Initialize a new database with an empty table.
+2025-02-16 11:09:58.956 | INFO     | consumers.db_sqlite_case:init_db:48 - Calling SQLite init_db() with {db_path=}.
+2025-02-16 11:09:58.957 | INFO     | consumers.db_sqlite_case:init_db:55 - SUCCESS: Got a cursor to execute SQL.
+2025-02-16 11:09:58.968 | INFO     | consumers.db_sqlite_case:init_db:70 - SUCCESS: Database initialized and table ready at C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite.
+2025-02-16 11:09:58.968 | INFO     | __main__:main:204 - STEP 4. Begin consuming and storing messages.
+2025-02-16 11:09:58.969 | INFO     | __main__:consume_messages_from_kafka:105 - Called consume_messages_from_kafka() with:
+2025-02-16 11:09:58.969 | INFO     | __main__:consume_messages_from_kafka:106 -    topic='buzzline'
+2025-02-16 11:09:58.969 | INFO     | __main__:consume_messages_from_kafka:107 -    kafka_url='localhost:9092'
+2025-02-16 11:09:58.969 | INFO     | __main__:consume_messages_from_kafka:108 -    group='buzz_group'
+2025-02-16 11:09:58.969 | INFO     | __main__:consume_messages_from_kafka:109 -    sql_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:58.969 | INFO     | __main__:consume_messages_from_kafka:110 -    interval_secs=5
+2025-02-16 11:09:58.970 | INFO     | __main__:consume_messages_from_kafka:112 - Step 1. Verify Kafka Services.
+2025-02-16 11:09:58.970 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-16 11:09:58.974 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-16 11:09:58.974 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:09:59.267 | INFO     | __main__:main:178 - {'message': 'I just found a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:09:59', 'category': 'entertainment', 'sentiment': 0.53, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-16 11:09:59.267 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:09:59', 'category': 'entertainment', 'sentiment': 0.53, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-16 11:09:59.267 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:09:59', 'category': 'entertainment', 'sentiment': 0.53, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-16 11:09:59.284 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-16 11:09:59.284 | INFO     | __main__:consume_messages_from_kafka:119 - Step 2. Create a Kafka consumer.
+2025-02-16 11:09:59.285 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:09:59.285 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline' and group ID='buzz_group'.
+2025-02-16 11:09:59.388 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-16 11:09:59.388 | INFO     | __main__:consume_messages_from_kafka:130 - Step 3. Verify topic exists.
+2025-02-16 11:09:59.388 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:09:59.698 | INFO     | utils.utils_producer:is_topic_available:252 - Topic 'buzzline' already exists. 
+2025-02-16 11:09:59.699 | INFO     | __main__:consume_messages_from_kafka:134 - Kafka topic 'buzzline' is ready.
+2025-02-16 11:09:59.699 | INFO     | __main__:consume_messages_from_kafka:141 - Step 4. Process messages.
+2025-02-16 11:09:59.876 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.876 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried travel! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:00:37', 'category': 'travel', 'sentiment': 0.19, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:09:59.876 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.19, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.876 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.878 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.19, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.878 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.879 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.879 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.879 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw Python! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:00:42', 'category': 'tech', 'sentiment': 0.99, 'keyword_mentioned': 'Python', 'message_length': 32}
+2025-02-16 11:09:59.879 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.99, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.879 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.879 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.99, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.880 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.880 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.880 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.880 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared JavaScript! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:07', 'category': 'tech', 'sentiment': 0.71, 'keyword_mentioned': 'JavaScript', 'message_length': 41}
+2025-02-16 11:09:59.880 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.71, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.880 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.880 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.71, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.880 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.880 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.881 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.881 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw a movie! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:12', 'category': 'entertainment', 'sentiment': 0.98, 'keyword_mentioned': 'movie', 'message_length': 33}
+2025-02-16 11:09:59.881 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.98, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.881 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.881 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.98, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.881 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.882 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.882 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.882 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:17', 'category': 'tech', 'sentiment': 0.95, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-16 11:09:59.882 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.95, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.882 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.882 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.95, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.882 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.883 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.883 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.883 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried a meme! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:22', 'category': 'humor', 'sentiment': 0.97, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-02-16 11:09:59.883 | INFO     | __main__:process_message:75 - Processed message: {'category': 'humor', 'sentiment': 0.97, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.883 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.883 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'humor', 'sentiment': 0.97, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.884 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.884 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.884 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.884 | INFO     | __main__:process_message:59 -    message={'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:27', 'category': 'travel', 'sentiment': 0.46, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:09:59.884 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.46, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.884 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.885 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.46, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.885 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.885 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.885 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.885 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared a story! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:32', 'category': 'other', 'sentiment': 0.03, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-16 11:09:59.885 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.03, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.886 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.886 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.03, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.886 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.886 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.886 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.886 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw a movie! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:37', 'category': 'entertainment', 'sentiment': 0.06, 'keyword_mentioned': 'movie', 'message_length': 34}
+2025-02-16 11:09:59.887 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.06, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.887 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.887 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.06, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.887 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.887 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.887 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.887 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:12:42', 'category': 'other', 'sentiment': 0.32, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-02-16 11:09:59.887 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.32, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.889 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.889 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.32, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.889 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.889 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.889 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.889 | INFO     | __main__:process_message:59 -    message={'message': 'I just found a trick! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-13 23:12:47', 'category': 'other', 'sentiment': 0.53, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-16 11:09:59.890 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.53, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.890 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.890 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.53, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.890 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.890 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.891 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.891 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:12:52', 'category': 'entertainment', 'sentiment': 0.16, 'keyword_mentioned': 'movie', 'message_length': 38}
+2025-02-16 11:09:59.891 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.16, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.891 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.892 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.16, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.892 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.892 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.892 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.892 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried travel! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-13 23:12:57', 'category': 'travel', 'sentiment': 0.12, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:09:59.893 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.12, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.893 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.893 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.12, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.893 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.893 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.894 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.894 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved travel! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:02', 'category': 'travel', 'sentiment': 0.58, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-16 11:09:59.894 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.58, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.894 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.894 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.58, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.894 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.895 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.895 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.895 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved a meme! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:13:07', 'category': 'humor', 'sentiment': 0.18, 'keyword_mentioned': 'meme', 'message_length': 36}
+2025-02-16 11:09:59.895 | INFO     | __main__:process_message:75 - Processed message: {'category': 'humor', 'sentiment': 0.18, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.895 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.895 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'humor', 'sentiment': 0.18, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.896 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.896 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.896 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.896 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried recipe! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:12', 'category': 'food', 'sentiment': 0.09, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-16 11:09:59.896 | INFO     | __main__:process_message:75 - Processed message: {'category': 'food', 'sentiment': 0.09, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.896 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.897 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'food', 'sentiment': 0.09, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.897 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.897 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.897 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.897 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved game! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:13:17', 'category': 'gaming', 'sentiment': 0.45, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-16 11:09:59.898 | INFO     | __main__:process_message:75 - Processed message: {'category': 'gaming', 'sentiment': 0.45, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.898 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.898 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'gaming', 'sentiment': 0.45, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.898 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.898 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.898 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.898 | INFO     | __main__:process_message:59 -    message={'message': 'I just found travel! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-13 23:13:22', 'category': 'travel', 'sentiment': 0.91, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-02-16 11:09:59.898 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.91, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.898 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.898 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.91, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.898 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.899 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.899 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.899 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared game! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-13 23:16:17', 'category': 'gaming', 'sentiment': 0.84, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-16 11:09:59.899 | INFO     | __main__:process_message:75 - Processed message: {'category': 'gaming', 'sentiment': 0.84, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.899 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.899 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'gaming', 'sentiment': 0.84, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.900 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.900 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.900 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.900 | INFO     | __main__:process_message:59 -    message={'message': 'I just found Python! It was exciting.', 'author': 'Bob', 'timestamp': '2025-02-13 23:16:22', 'category': 'tech', 'sentiment': 0.33, 'keyword_mentioned': 'Python', 'message_length': 37}
+2025-02-16 11:09:59.900 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.33, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.900 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.901 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.33, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.901 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.901 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.901 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.902 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved a story! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:27', 'category': 'other', 'sentiment': 0.32, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-16 11:09:59.902 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.32, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.902 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.902 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.32, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.902 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.903 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.903 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.903 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared game! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:32', 'category': 'gaming', 'sentiment': 0.79, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:09:59.903 | INFO     | __main__:process_message:75 - Processed message: {'category': 'gaming', 'sentiment': 0.79, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.904 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.904 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'gaming', 'sentiment': 0.79, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.904 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.904 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.905 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.905 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared a movie! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:16:44', 'category': 'entertainment', 'sentiment': 0.55, 'keyword_mentioned': 'movie', 'message_length': 39}
+2025-02-16 11:09:59.905 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.55, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.905 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.905 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.55, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.905 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.906 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.906 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.906 | INFO     | __main__:process_message:59 -    message={'message': 'I just found travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-13 23:16:49', 'category': 'travel', 'sentiment': 0.58, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-16 11:09:59.906 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.58, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.907 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.907 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.58, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.907 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.907 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.907 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.908 | INFO     | __main__:process_message:59 -    message={'message': 'I just found game! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-13 23:16:54', 'category': 'gaming', 'sentiment': 0.09, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-02-16 11:09:59.908 | INFO     | __main__:process_message:75 - Processed message: {'category': 'gaming', 'sentiment': 0.09, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.908 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.908 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'gaming', 'sentiment': 0.09, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.908 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.908 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.908 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.909 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw a movie! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-13 23:16:59', 'category': 'entertainment', 'sentiment': 0.92, 'keyword_mentioned': 'movie', 'message_length': 33}
+2025-02-16 11:09:59.909 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.92, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.909 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.909 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.92, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.909 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.909 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.910 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.910 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried a story! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-13 23:17:04', 'category': 'other', 'sentiment': 0.22, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-16 11:09:59.910 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.22, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.910 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.910 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.22, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.910 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.911 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.911 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.911 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared a meme! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:09', 'category': 'humor', 'sentiment': 0.54, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:09:59.911 | INFO     | __main__:process_message:75 - Processed message: {'category': 'humor', 'sentiment': 0.54, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.911 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.911 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'humor', 'sentiment': 0.54, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.911 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.912 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.912 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.912 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved JavaScript! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:14', 'category': 'tech', 'sentiment': 0.59, 'keyword_mentioned': 'JavaScript', 'message_length': 40}
+2025-02-16 11:09:59.912 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.59, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.912 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.913 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.59, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.913 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.913 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.914 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.914 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared a story! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-13 23:17:19', 'category': 'other', 'sentiment': 0.65, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:09:59.914 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.65, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.914 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.914 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.65, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.914 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.915 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.915 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.915 | INFO     | __main__:process_message:59 -    message={'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:24', 'category': 'travel', 'sentiment': 0.7, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:09:59.915 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.7, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.915 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.915 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.7, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.915 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.916 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.916 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.916 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved an app! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-13 23:17:29', 'category': 'other', 'sentiment': 0.75, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-02-16 11:09:59.916 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.75, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.916 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.916 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.75, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.916 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.917 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.917 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.917 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw a story! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:05:08', 'category': 'other', 'sentiment': 0.23, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-16 11:09:59.917 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.23, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.917 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.917 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.23, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.917 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.918 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.918 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.918 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved a movie! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:05:13', 'category': 'entertainment', 'sentiment': 0.56, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:09:59.918 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.56, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.918 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.918 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.56, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.918 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.919 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.919 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.919 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved a movie! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:05:18', 'category': 'entertainment', 'sentiment': 0.59, 'keyword_mentioned': 'movie', 'message_length': 35}
+2025-02-16 11:09:59.919 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.59, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.919 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.919 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.59, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.921 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.921 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.921 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.921 | INFO     | __main__:process_message:59 -    message={'message': 'I just found a story! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:05:23', 'category': 'other', 'sentiment': 0.42, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:09:59.922 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.42, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.922 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.922 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.42, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.922 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.922 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.922 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.923 | INFO     | __main__:process_message:59 -    message={'message': 'I just found a story! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:05:28', 'category': 'other', 'sentiment': 0.12, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-16 11:09:59.923 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.12, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.923 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.923 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.12, 'sentiment-level': 'Low'}
+2025-02-16 11:09:59.923 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.924 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.924 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.924 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved a meme! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:05:33', 'category': 'humor', 'sentiment': 0.49, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:09:59.924 | INFO     | __main__:process_message:75 - Processed message: {'category': 'humor', 'sentiment': 0.49, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.924 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.924 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'humor', 'sentiment': 0.49, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.924 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.925 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.925 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.925 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried a meme! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:09:54', 'category': 'humor', 'sentiment': 0.75, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-02-16 11:09:59.925 | INFO     | __main__:process_message:75 - Processed message: {'category': 'humor', 'sentiment': 0.75, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.925 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.925 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'humor', 'sentiment': 0.75, 'sentiment-level': 'High'}
+2025-02-16 11:09:59.926 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.926 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:09:59.926 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:09:59.926 | INFO     | __main__:process_message:59 -    message={'message': 'I just found a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:09:59', 'category': 'entertainment', 'sentiment': 0.53, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-16 11:09:59.927 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.53, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.927 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:09:59.927 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.53, 'sentiment-level': 'Moderate'}
+2025-02-16 11:09:59.927 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:09:59.927 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:04.269 | INFO     | __main__:main:178 - {'message': 'I just tried recipe! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:04', 'category': 'food', 'sentiment': 0.91, 'keyword_mentioned': 'recipe', 'message_length': 35}
+2025-02-16 11:10:04.270 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried recipe! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:04', 'category': 'food', 'sentiment': 0.91, 'keyword_mentioned': 'recipe', 'message_length': 35}
+2025-02-16 11:10:04.279 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried recipe! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:04', 'category': 'food', 'sentiment': 0.91, 'keyword_mentioned': 'recipe', 'message_length': 35}
+2025-02-16 11:10:04.288 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:10:04.289 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried recipe! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:04', 'category': 'food', 'sentiment': 0.91, 'keyword_mentioned': 'recipe', 'message_length': 35}
+2025-02-16 11:10:04.289 | INFO     | __main__:process_message:75 - Processed message: {'category': 'food', 'sentiment': 0.91, 'sentiment-level': 'High'}
+2025-02-16 11:10:04.289 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:10:04.289 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'food', 'sentiment': 0.91, 'sentiment-level': 'High'}
+2025-02-16 11:10:04.289 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:10:04.290 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:09.280 | INFO     | __main__:main:178 - {'message': 'I just saw travel! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:09', 'category': 'travel', 'sentiment': 0.5, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:10:09.280 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw travel! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:09', 'category': 'travel', 'sentiment': 0.5, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:10:09.281 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw travel! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:09', 'category': 'travel', 'sentiment': 0.5, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:10:09.291 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:10:09.291 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw travel! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:09', 'category': 'travel', 'sentiment': 0.5, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:10:09.291 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.5, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:09.291 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:10:09.291 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.5, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:09.291 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:10:09.292 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:14.282 | INFO     | __main__:main:178 - {'message': 'I just shared a movie! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:14', 'category': 'entertainment', 'sentiment': 0.57, 'keyword_mentioned': 'movie', 'message_length': 39}
+2025-02-16 11:10:14.282 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a movie! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:14', 'category': 'entertainment', 'sentiment': 0.57, 'keyword_mentioned': 'movie', 'message_length': 39}
+2025-02-16 11:10:14.283 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a movie! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:14', 'category': 'entertainment', 'sentiment': 0.57, 'keyword_mentioned': 'movie', 'message_length': 39}
+2025-02-16 11:10:14.293 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:10:14.293 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared a movie! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:14', 'category': 'entertainment', 'sentiment': 0.57, 'keyword_mentioned': 'movie', 'message_length': 39}
+2025-02-16 11:10:14.293 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.57, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:14.293 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:10:14.293 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.57, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:14.294 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:10:14.294 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:19.284 | INFO     | __main__:main:178 - {'message': 'I just loved recipe! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:19', 'category': 'food', 'sentiment': 0.36, 'keyword_mentioned': 'recipe', 'message_length': 37}
+2025-02-16 11:10:19.284 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved recipe! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:19', 'category': 'food', 'sentiment': 0.36, 'keyword_mentioned': 'recipe', 'message_length': 37}
+2025-02-16 11:10:19.285 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved recipe! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:19', 'category': 'food', 'sentiment': 0.36, 'keyword_mentioned': 'recipe', 'message_length': 37}
+2025-02-16 11:10:19.295 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:10:19.295 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved recipe! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:19', 'category': 'food', 'sentiment': 0.36, 'keyword_mentioned': 'recipe', 'message_length': 37}
+2025-02-16 11:10:19.295 | INFO     | __main__:process_message:75 - Processed message: {'category': 'food', 'sentiment': 0.36, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:19.295 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:10:19.295 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'food', 'sentiment': 0.36, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:19.295 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:10:19.295 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:24.286 | INFO     | __main__:main:178 - {'message': 'I just loved travel! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:24', 'category': 'travel', 'sentiment': 0.2, 'keyword_mentioned': 'travel', 'message_length': 37}
+2025-02-16 11:10:24.286 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved travel! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:24', 'category': 'travel', 'sentiment': 0.2, 'keyword_mentioned': 'travel', 'message_length': 37}
+2025-02-16 11:10:24.287 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved travel! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:24', 'category': 'travel', 'sentiment': 0.2, 'keyword_mentioned': 'travel', 'message_length': 37}
+2025-02-16 11:10:24.296 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:10:24.297 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved travel! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:24', 'category': 'travel', 'sentiment': 0.2, 'keyword_mentioned': 'travel', 'message_length': 37}
+2025-02-16 11:10:24.297 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.2, 'sentiment-level': 'Low'}
+2025-02-16 11:10:24.297 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:10:24.297 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.2, 'sentiment-level': 'Low'}
+2025-02-16 11:10:24.297 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:10:24.298 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:29.288 | INFO     | __main__:main:178 - {'message': 'I just loved an app! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:29', 'category': 'other', 'sentiment': 0.76, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-16 11:10:29.288 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved an app! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:29', 'category': 'other', 'sentiment': 0.76, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-16 11:10:29.289 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved an app! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:29', 'category': 'other', 'sentiment': 0.76, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-16 11:10:29.298 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:10:29.299 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved an app! It was boring.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:29', 'category': 'other', 'sentiment': 0.76, 'keyword_mentioned': 'other', 'message_length': 35}
+2025-02-16 11:10:29.299 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.76, 'sentiment-level': 'High'}
+2025-02-16 11:10:29.299 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:10:29.299 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.76, 'sentiment-level': 'High'}
+2025-02-16 11:10:29.299 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:10:29.300 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:34.290 | INFO     | __main__:main:178 - {'message': 'I just tried a meme! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:34', 'category': 'humor', 'sentiment': 0.51, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-02-16 11:10:34.290 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a meme! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:34', 'category': 'humor', 'sentiment': 0.51, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-02-16 11:10:34.290 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a meme! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:34', 'category': 'humor', 'sentiment': 0.51, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-02-16 11:10:34.300 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:10:34.301 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried a meme! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:10:34', 'category': 'humor', 'sentiment': 0.51, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-02-16 11:10:34.301 | INFO     | __main__:process_message:75 - Processed message: {'category': 'humor', 'sentiment': 0.51, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:34.301 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:10:34.301 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'humor', 'sentiment': 0.51, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:34.301 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:10:34.302 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:39.292 | INFO     | __main__:main:178 - {'message': 'I just tried a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:10:39', 'category': 'other', 'sentiment': 0.72, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:10:39.292 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:10:39', 'category': 'other', 'sentiment': 0.72, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:10:39.293 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:10:39', 'category': 'other', 'sentiment': 0.72, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:10:39.303 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:10:39.303 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:10:39', 'category': 'other', 'sentiment': 0.72, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:10:39.303 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.72, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:39.304 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:10:39.304 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.72, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:39.304 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:10:39.304 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:44.293 | INFO     | __main__:main:178 - {'message': 'I just tried a story! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:44', 'category': 'other', 'sentiment': 0.4, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:10:44.293 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a story! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:44', 'category': 'other', 'sentiment': 0.4, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:10:44.295 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a story! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:44', 'category': 'other', 'sentiment': 0.4, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:10:44.298 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:10:44.298 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried a story! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:44', 'category': 'other', 'sentiment': 0.4, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:10:44.298 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.4, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:44.298 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:10:44.298 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.4, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:44.298 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:10:44.298 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:49.296 | INFO     | __main__:main:178 - {'message': 'I just shared travel! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:49', 'category': 'travel', 'sentiment': 0.78, 'keyword_mentioned': 'travel', 'message_length': 37}
+2025-02-16 11:10:49.296 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared travel! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:49', 'category': 'travel', 'sentiment': 0.78, 'keyword_mentioned': 'travel', 'message_length': 37}
+2025-02-16 11:10:49.297 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared travel! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:49', 'category': 'travel', 'sentiment': 0.78, 'keyword_mentioned': 'travel', 'message_length': 37}
+2025-02-16 11:10:49.300 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:10:49.301 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared travel! It was amazing.', 'author': 'Eve', 'timestamp': '2025-02-16 11:10:49', 'category': 'travel', 'sentiment': 0.78, 'keyword_mentioned': 'travel', 'message_length': 37}
+2025-02-16 11:10:49.301 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.78, 'sentiment-level': 'High'}
+2025-02-16 11:10:49.301 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:10:49.301 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.78, 'sentiment-level': 'High'}
+2025-02-16 11:10:49.301 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:10:49.301 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:54.298 | INFO     | __main__:main:178 - {'message': 'I just saw a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:54', 'category': 'humor', 'sentiment': 0.55, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:10:54.298 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:54', 'category': 'humor', 'sentiment': 0.55, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:10:54.298 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:54', 'category': 'humor', 'sentiment': 0.55, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:10:54.303 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:10:54.303 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw a meme! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:10:54', 'category': 'humor', 'sentiment': 0.55, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:10:54.303 | INFO     | __main__:process_message:75 - Processed message: {'category': 'humor', 'sentiment': 0.55, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:54.303 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:10:54.303 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'humor', 'sentiment': 0.55, 'sentiment-level': 'Moderate'}
+2025-02-16 11:10:54.304 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:10:54.304 | ERROR    | consumers.db_sqlite_case:insert_message:111 - ERROR: Failed to insert message into the database: 'sentiment_level'
+2025-02-16 11:10:55.023 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-16 11:10:55.024 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-16 11:10:55.024 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-16 11:10:56.305 | WARNING  | __main__:main:210 - Consumer interrupted by user.
+2025-02-16 11:10:56.306 | INFO     | __main__:main:214 - Consumer shutting down.
+2025-02-16 11:12:37.444 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-16 11:12:37.445 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-16 11:12:37.445 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-16 11:12:37.445 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-16 11:12:37.445 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-16 11:12:37.445 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-16 11:12:37.445 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-16 11:12:37.445 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:12:37.445 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-16 11:12:37.446 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-16 11:12:37.446 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-16 11:12:37.448 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-16 11:12:37.449 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-16 11:12:37.449 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-16 11:12:37.449 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-16 11:12:37.453 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-16 11:12:37.453 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:12:37.764 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-16 11:12:37.868 | INFO     | __main__:main:162 - Kafka producer connected to localhost:9092
+2025-02-16 11:12:37.868 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:12:38.179 | INFO     | utils.utils_producer:create_kafka_topic:150 - Topic 'buzzline' exists. Clearing it out...
+2025-02-16 11:12:38.179 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:12:38.491 | ERROR    | utils.utils_producer:clear_kafka_topic:226 - Error managing retention for topic 'buzzline': list indices must be integers or slices, not ConfigResource
+2025-02-16 11:12:38.491 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-16 11:12:38.491 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-16 11:12:38.491 | INFO     | __main__:main:178 - {'message': 'I just tried a trick! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-16 11:12:38', 'category': 'other', 'sentiment': 0.25, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-16 11:12:38.493 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a trick! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-16 11:12:38', 'category': 'other', 'sentiment': 0.25, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-16 11:12:38.493 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a trick! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-16 11:12:38', 'category': 'other', 'sentiment': 0.25, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-16 11:12:42.459 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-16 11:12:42.476 | INFO     | __main__:main:172 - Starting Consumer to run continuously.
+2025-02-16 11:12:42.477 | INFO     | __main__:main:173 - Things can fail or get interrupted, so use a try block.
+2025-02-16 11:12:42.477 | INFO     | __main__:main:174 - Moved .env variables into a utils config module.
+2025-02-16 11:12:42.477 | INFO     | __main__:main:176 - STEP 1. Read environment variables using new config functions.
+2025-02-16 11:12:42.477 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-16 11:12:42.477 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:12:42.477 | INFO     | utils.utils_config:get_kafka_consumer_group_id:72 - BUZZ_CONSUMER_GROUP_ID: buzz_group
+2025-02-16 11:12:42.477 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-16 11:12:42.477 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-16 11:12:42.477 | INFO     | utils.utils_config:get_sqlite_path:96 - SQLITE_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite
+2025-02-16 11:12:42.478 | INFO     | __main__:main:183 - SUCCESS: Read environment variables.
+2025-02-16 11:12:42.478 | INFO     | __main__:main:188 - STEP 2. Delete any prior database file for a fresh start.
+2025-02-16 11:12:42.480 | INFO     | __main__:main:192 - SUCCESS: Deleted database file.
+2025-02-16 11:12:42.480 | INFO     | __main__:main:197 - STEP 3. Initialize a new database with an empty table.
+2025-02-16 11:12:42.480 | INFO     | consumers.db_sqlite_case:init_db:48 - Calling SQLite init_db() with {db_path=}.
+2025-02-16 11:12:42.481 | INFO     | consumers.db_sqlite_case:init_db:55 - SUCCESS: Got a cursor to execute SQL.
+2025-02-16 11:12:42.493 | INFO     | consumers.db_sqlite_case:init_db:70 - SUCCESS: Database initialized and table ready at C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite.
+2025-02-16 11:12:42.493 | INFO     | __main__:main:204 - STEP 4. Begin consuming and storing messages.
+2025-02-16 11:12:42.493 | INFO     | __main__:consume_messages_from_kafka:105 - Called consume_messages_from_kafka() with:
+2025-02-16 11:12:42.493 | INFO     | __main__:consume_messages_from_kafka:106 -    topic='buzzline'
+2025-02-16 11:12:42.493 | INFO     | __main__:consume_messages_from_kafka:107 -    kafka_url='localhost:9092'
+2025-02-16 11:12:42.493 | INFO     | __main__:consume_messages_from_kafka:108 -    group='buzz_group'
+2025-02-16 11:12:42.493 | INFO     | __main__:consume_messages_from_kafka:109 -    sql_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:12:42.493 | INFO     | __main__:consume_messages_from_kafka:110 -    interval_secs=5
+2025-02-16 11:12:42.495 | INFO     | __main__:consume_messages_from_kafka:112 - Step 1. Verify Kafka Services.
+2025-02-16 11:12:42.495 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-16 11:12:42.499 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-16 11:12:42.499 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:12:42.808 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-16 11:12:42.808 | INFO     | __main__:consume_messages_from_kafka:119 - Step 2. Create a Kafka consumer.
+2025-02-16 11:12:42.808 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:12:42.809 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline' and group ID='buzz_group'.
+2025-02-16 11:12:42.911 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-16 11:12:42.911 | INFO     | __main__:consume_messages_from_kafka:130 - Step 3. Verify topic exists.
+2025-02-16 11:12:42.911 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:12:43.221 | INFO     | utils.utils_producer:is_topic_available:252 - Topic 'buzzline' already exists. 
+2025-02-16 11:12:43.221 | INFO     | __main__:consume_messages_from_kafka:134 - Kafka topic 'buzzline' is ready.
+2025-02-16 11:12:43.221 | INFO     | __main__:consume_messages_from_kafka:141 - Step 4. Process messages.
+2025-02-16 11:12:43.223 | ERROR    | __main__:consume_messages_from_kafka:157 - ERROR: Could not consume messages from Kafka: Invalid file descriptor: -1
+2025-02-16 11:12:43.223 | ERROR    | __main__:main:212 - Unexpected error: Invalid file descriptor: -1
+2025-02-16 11:12:43.223 | INFO     | __main__:main:214 - Consumer shutting down.
+2025-02-16 11:12:43.494 | INFO     | __main__:main:178 - {'message': 'I just saw a trick! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:12:43', 'category': 'other', 'sentiment': 0.97, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-16 11:12:43.494 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw a trick! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:12:43', 'category': 'other', 'sentiment': 0.97, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-16 11:12:43.494 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw a trick! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:12:43', 'category': 'other', 'sentiment': 0.97, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-16 11:12:48.495 | INFO     | __main__:main:178 - {'message': 'I just tried a meme! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:12:48', 'category': 'humor', 'sentiment': 0.97, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:12:48.495 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a meme! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:12:48', 'category': 'humor', 'sentiment': 0.97, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:12:48.496 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a meme! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:12:48', 'category': 'humor', 'sentiment': 0.97, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:12:51.186 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-16 11:12:51.186 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-16 11:12:51.186 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-16 11:17:51.939 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-16 11:17:51.940 | INFO     | __main__:main:125 - Starting Producer to run continuously.
+2025-02-16 11:17:51.940 | INFO     | __main__:main:126 - Things can fail or get interrupted, so use a try block.
+2025-02-16 11:17:51.940 | INFO     | __main__:main:127 - Moved .env variables into a utils config module.
+2025-02-16 11:17:51.940 | INFO     | __main__:main:129 - STEP 1. Read required environment variables.
+2025-02-16 11:17:51.940 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-16 11:17:51.940 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-16 11:17:51.940 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:17:51.941 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-16 11:17:51.941 | INFO     | utils.utils_config:get_live_data_path:89 - LIVE_DATA_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\project_live.json
+2025-02-16 11:17:51.941 | INFO     | __main__:main:140 - STEP 2. Delete the live data file if exists to start fresh.
+2025-02-16 11:17:51.944 | INFO     | __main__:main:145 - Deleted existing live data file.
+2025-02-16 11:17:51.944 | INFO     | __main__:main:147 - STEP 3. Build the path folders to the live data file if needed.
+2025-02-16 11:17:51.945 | INFO     | __main__:main:153 - STEP 4. Try to create a Kafka producer and topic.
+2025-02-16 11:17:51.945 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-16 11:17:51.949 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-16 11:17:51.950 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:17:52.260 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-16 11:17:52.366 | INFO     | __main__:main:162 - Kafka producer connected to localhost:9092
+2025-02-16 11:17:52.366 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:17:52.677 | INFO     | utils.utils_producer:create_kafka_topic:150 - Topic 'buzzline' exists. Clearing it out...
+2025-02-16 11:17:52.677 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:17:52.991 | ERROR    | utils.utils_producer:clear_kafka_topic:226 - Error managing retention for topic 'buzzline': list indices must be integers or slices, not ConfigResource
+2025-02-16 11:17:52.991 | INFO     | __main__:main:170 - Kafka topic 'buzzline' is ready.
+2025-02-16 11:17:52.991 | INFO     | __main__:main:175 - STEP 5. Generate messages continuously.
+2025-02-16 11:17:52.992 | INFO     | __main__:main:178 - {'message': 'I just found Python! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:17:52', 'category': 'tech', 'sentiment': 0.11, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-16 11:17:52.992 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found Python! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:17:52', 'category': 'tech', 'sentiment': 0.11, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-16 11:17:52.993 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found Python! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:17:52', 'category': 'tech', 'sentiment': 0.11, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-16 11:17:57.653 | INFO     | utils.utils_logger:<module>:43 - Logging to file: logs\project_log.log
+2025-02-16 11:17:57.656 | INFO     | __main__:main:172 - Starting Consumer to run continuously.
+2025-02-16 11:17:57.656 | INFO     | __main__:main:173 - Things can fail or get interrupted, so use a try block.
+2025-02-16 11:17:57.656 | INFO     | __main__:main:174 - Moved .env variables into a utils config module.
+2025-02-16 11:17:57.656 | INFO     | __main__:main:176 - STEP 1. Read environment variables using new config functions.
+2025-02-16 11:17:57.656 | INFO     | utils.utils_config:get_kafka_topic:58 - BUZZ_TOPIC: buzzline
+2025-02-16 11:17:57.656 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:17:57.656 | INFO     | utils.utils_config:get_kafka_consumer_group_id:72 - BUZZ_CONSUMER_GROUP_ID: buzz_group
+2025-02-16 11:17:57.658 | INFO     | utils.utils_config:get_message_interval_seconds_as_int:65 - MESSAGE_INTERVAL_SECONDS: 5
+2025-02-16 11:17:57.658 | INFO     | utils.utils_config:get_base_data_path:80 - BASE_DATA_DIR: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data
+2025-02-16 11:17:57.658 | INFO     | utils.utils_config:get_sqlite_path:96 - SQLITE_PATH: C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite
+2025-02-16 11:17:57.658 | INFO     | __main__:main:183 - SUCCESS: Read environment variables.
+2025-02-16 11:17:57.658 | INFO     | __main__:main:188 - STEP 2. Delete any prior database file for a fresh start.
+2025-02-16 11:17:57.661 | INFO     | __main__:main:192 - SUCCESS: Deleted database file.
+2025-02-16 11:17:57.662 | INFO     | __main__:main:197 - STEP 3. Initialize a new database with an empty table.
+2025-02-16 11:17:57.662 | INFO     | consumers.db_sqlite_case:init_db:48 - Calling SQLite init_db() with {db_path=}.
+2025-02-16 11:17:57.662 | INFO     | consumers.db_sqlite_case:init_db:55 - SUCCESS: Got a cursor to execute SQL.
+2025-02-16 11:17:57.676 | INFO     | consumers.db_sqlite_case:init_db:70 - SUCCESS: Database initialized and table ready at C:\Users\scmil\Documents\Data_Analytics\Data_Streaming\buzzline-05-miller\data\buzz.sqlite.
+2025-02-16 11:17:57.676 | INFO     | __main__:main:204 - STEP 4. Begin consuming and storing messages.
+2025-02-16 11:17:57.677 | INFO     | __main__:consume_messages_from_kafka:105 - Called consume_messages_from_kafka() with:
+2025-02-16 11:17:57.677 | INFO     | __main__:consume_messages_from_kafka:106 -    topic='buzzline'
+2025-02-16 11:17:57.677 | INFO     | __main__:consume_messages_from_kafka:107 -    kafka_url='localhost:9092'
+2025-02-16 11:17:57.677 | INFO     | __main__:consume_messages_from_kafka:108 -    group='buzz_group'
+2025-02-16 11:17:57.677 | INFO     | __main__:consume_messages_from_kafka:109 -    sql_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:17:57.677 | INFO     | __main__:consume_messages_from_kafka:110 -    interval_secs=5
+2025-02-16 11:17:57.677 | INFO     | __main__:consume_messages_from_kafka:112 - Step 1. Verify Kafka Services.
+2025-02-16 11:17:57.678 | INFO     | utils.utils_config:get_zookeeper_address:44 - ZOOKEEPER_ADDRESS: localhost:2181
+2025-02-16 11:17:57.681 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:47 - Zookeeper is ready at localhost:2181.
+2025-02-16 11:17:57.682 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:17:57.992 | INFO     | utils.utils_producer:check_kafka_service_is_ready:66 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'b_YEc9_mSjyM5tN5MA9yMQ', 'controller_id': 1001}
+2025-02-16 11:17:57.992 | INFO     | __main__:consume_messages_from_kafka:119 - Step 2. Create a Kafka consumer.
+2025-02-16 11:17:57.993 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:17:57.993 | INFO     | __main__:main:178 - {'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:17:57', 'category': 'travel', 'sentiment': 1.0, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:17:57.993 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='buzzline' and group ID='buzz_group'.
+2025-02-16 11:17:57.993 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:17:57', 'category': 'travel', 'sentiment': 1.0, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:17:57.993 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:17:57', 'category': 'travel', 'sentiment': 1.0, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:17:58.097 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-16 11:17:58.097 | INFO     | __main__:consume_messages_from_kafka:130 - Step 3. Verify topic exists.
+2025-02-16 11:17:58.097 | INFO     | utils.utils_config:get_kafka_broker_address:51 - KAFKA_BROKER_ADDRESS: localhost:9092
+2025-02-16 11:17:58.408 | INFO     | utils.utils_producer:is_topic_available:252 - Topic 'buzzline' already exists. 
+2025-02-16 11:17:58.408 | INFO     | __main__:consume_messages_from_kafka:134 - Kafka topic 'buzzline' is ready.
+2025-02-16 11:17:58.409 | INFO     | __main__:consume_messages_from_kafka:141 - Step 4. Process messages.
+2025-02-16 11:17:58.722 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:17:58.722 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried a trick! It was exciting.', 'author': 'Alice', 'timestamp': '2025-02-16 11:12:38', 'category': 'other', 'sentiment': 0.25, 'keyword_mentioned': 'other', 'message_length': 38}
+2025-02-16 11:17:58.722 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.25, 'sentiment_level': 'Low'}
+2025-02-16 11:17:58.722 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:17:58.722 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.25, 'sentiment_level': 'Low'}
+2025-02-16 11:17:58.723 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:17:58.741 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:17:58.741 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:17:58.741 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw a trick! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:12:43', 'category': 'other', 'sentiment': 0.97, 'keyword_mentioned': 'other', 'message_length': 33}
+2025-02-16 11:17:58.741 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.97, 'sentiment_level': 'High'}
+2025-02-16 11:17:58.742 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:17:58.742 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.97, 'sentiment_level': 'High'}
+2025-02-16 11:17:58.742 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:17:58.751 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:17:58.751 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:17:58.751 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried a meme! It was boring.', 'author': 'Eve', 'timestamp': '2025-02-16 11:12:48', 'category': 'humor', 'sentiment': 0.97, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:17:58.752 | INFO     | __main__:process_message:75 - Processed message: {'category': 'humor', 'sentiment': 0.97, 'sentiment_level': 'High'}
+2025-02-16 11:17:58.752 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:17:58.752 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'humor', 'sentiment': 0.97, 'sentiment_level': 'High'}
+2025-02-16 11:17:58.752 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:17:58.761 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:17:58.761 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:17:58.761 | INFO     | __main__:process_message:59 -    message={'message': 'I just found Python! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:17:52', 'category': 'tech', 'sentiment': 0.11, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-16 11:17:58.762 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.11, 'sentiment_level': 'Low'}
+2025-02-16 11:17:58.762 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:17:58.762 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.11, 'sentiment_level': 'Low'}
+2025-02-16 11:17:58.762 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:17:58.771 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:17:58.771 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:17:58.772 | INFO     | __main__:process_message:59 -    message={'message': 'I just found travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:17:57', 'category': 'travel', 'sentiment': 1.0, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:17:58.772 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 1.0, 'sentiment_level': 'High'}
+2025-02-16 11:17:58.772 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:17:58.772 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 1.0, 'sentiment_level': 'High'}
+2025-02-16 11:17:58.772 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:17:58.781 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:02.995 | INFO     | __main__:main:178 - {'message': 'I just loved JavaScript! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:02', 'category': 'tech', 'sentiment': 0.54, 'keyword_mentioned': 'JavaScript', 'message_length': 40}
+2025-02-16 11:18:02.995 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved JavaScript! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:02', 'category': 'tech', 'sentiment': 0.54, 'keyword_mentioned': 'JavaScript', 'message_length': 40}
+2025-02-16 11:18:03.005 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved JavaScript! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:02', 'category': 'tech', 'sentiment': 0.54, 'keyword_mentioned': 'JavaScript', 'message_length': 40}
+2025-02-16 11:18:03.010 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:03.010 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved JavaScript! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:02', 'category': 'tech', 'sentiment': 0.54, 'keyword_mentioned': 'JavaScript', 'message_length': 40}
+2025-02-16 11:18:03.011 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.54, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:03.011 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:03.011 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.54, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:03.011 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:03.021 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:08.006 | INFO     | __main__:main:178 - {'message': 'I just tried travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:18:08', 'category': 'travel', 'sentiment': 0.53, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:18:08.006 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:18:08', 'category': 'travel', 'sentiment': 0.53, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:18:08.006 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:18:08', 'category': 'travel', 'sentiment': 0.53, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:18:08.012 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:08.012 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried travel! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:18:08', 'category': 'travel', 'sentiment': 0.53, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:18:08.012 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.53, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:08.012 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:08.012 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.53, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:08.013 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:08.029 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:13.008 | INFO     | __main__:main:178 - {'message': 'I just found recipe! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:13', 'category': 'food', 'sentiment': 0.26, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-16 11:18:13.008 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found recipe! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:13', 'category': 'food', 'sentiment': 0.26, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-16 11:18:13.008 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found recipe! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:13', 'category': 'food', 'sentiment': 0.26, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-16 11:18:13.014 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:13.014 | INFO     | __main__:process_message:59 -    message={'message': 'I just found recipe! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:13', 'category': 'food', 'sentiment': 0.26, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-16 11:18:13.014 | INFO     | __main__:process_message:75 - Processed message: {'category': 'food', 'sentiment': 0.26, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:13.015 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:13.015 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'food', 'sentiment': 0.26, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:13.015 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:13.034 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:18.010 | INFO     | __main__:main:178 - {'message': 'I just saw recipe! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:18', 'category': 'food', 'sentiment': 0.94, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-16 11:18:18.010 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw recipe! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:18', 'category': 'food', 'sentiment': 0.94, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-16 11:18:18.011 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw recipe! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:18', 'category': 'food', 'sentiment': 0.94, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-16 11:18:18.016 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:18.016 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw recipe! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:18', 'category': 'food', 'sentiment': 0.94, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-16 11:18:18.016 | INFO     | __main__:process_message:75 - Processed message: {'category': 'food', 'sentiment': 0.94, 'sentiment_level': 'High'}
+2025-02-16 11:18:18.016 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:18.016 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'food', 'sentiment': 0.94, 'sentiment_level': 'High'}
+2025-02-16 11:18:18.017 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:18.026 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:23.012 | INFO     | __main__:main:178 - {'message': 'I just found a movie! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:23', 'category': 'entertainment', 'sentiment': 0.41, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:18:23.012 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found a movie! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:23', 'category': 'entertainment', 'sentiment': 0.41, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:18:23.013 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found a movie! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:23', 'category': 'entertainment', 'sentiment': 0.41, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:18:23.018 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:23.018 | INFO     | __main__:process_message:59 -    message={'message': 'I just found a movie! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:18:23', 'category': 'entertainment', 'sentiment': 0.41, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:18:23.018 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.41, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:23.018 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:23.020 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.41, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:23.020 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:23.029 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:28.014 | INFO     | __main__:main:178 - {'message': 'I just tried JavaScript! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-16 11:18:28', 'category': 'tech', 'sentiment': 0.11, 'keyword_mentioned': 'JavaScript', 'message_length': 38}
+2025-02-16 11:18:28.014 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried JavaScript! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-16 11:18:28', 'category': 'tech', 'sentiment': 0.11, 'keyword_mentioned': 'JavaScript', 'message_length': 38}
+2025-02-16 11:18:28.015 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried JavaScript! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-16 11:18:28', 'category': 'tech', 'sentiment': 0.11, 'keyword_mentioned': 'JavaScript', 'message_length': 38}
+2025-02-16 11:18:28.020 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:28.020 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried JavaScript! It was weird.', 'author': 'Eve', 'timestamp': '2025-02-16 11:18:28', 'category': 'tech', 'sentiment': 0.11, 'keyword_mentioned': 'JavaScript', 'message_length': 38}
+2025-02-16 11:18:28.020 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.11, 'sentiment_level': 'Low'}
+2025-02-16 11:18:28.020 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:28.020 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.11, 'sentiment_level': 'Low'}
+2025-02-16 11:18:28.020 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:28.039 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:33.016 | INFO     | __main__:main:178 - {'message': 'I just saw travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:33', 'category': 'travel', 'sentiment': 0.26, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:18:33.016 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:33', 'category': 'travel', 'sentiment': 0.26, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:18:33.016 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:33', 'category': 'travel', 'sentiment': 0.26, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:18:33.021 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:33.023 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:33', 'category': 'travel', 'sentiment': 0.26, 'keyword_mentioned': 'travel', 'message_length': 34}
+2025-02-16 11:18:33.023 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.26, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:33.023 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:33.023 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.26, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:33.023 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:33.042 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:38.017 | INFO     | __main__:main:178 - {'message': 'I just shared game! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:38', 'category': 'gaming', 'sentiment': 0.77, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:18:38.018 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared game! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:38', 'category': 'gaming', 'sentiment': 0.77, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:18:38.018 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared game! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:38', 'category': 'gaming', 'sentiment': 0.77, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:18:38.025 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:38.025 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared game! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:38', 'category': 'gaming', 'sentiment': 0.77, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:18:38.025 | INFO     | __main__:process_message:75 - Processed message: {'category': 'gaming', 'sentiment': 0.77, 'sentiment_level': 'High'}
+2025-02-16 11:18:38.025 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:38.025 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'gaming', 'sentiment': 0.77, 'sentiment_level': 'High'}
+2025-02-16 11:18:38.026 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:38.044 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:43.019 | INFO     | __main__:main:178 - {'message': 'I just loved travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:43', 'category': 'travel', 'sentiment': 0.5, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-16 11:18:43.020 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:43', 'category': 'travel', 'sentiment': 0.5, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-16 11:18:43.020 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:43', 'category': 'travel', 'sentiment': 0.5, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-16 11:18:43.025 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:43.025 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved travel! It was amazing.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:43', 'category': 'travel', 'sentiment': 0.5, 'keyword_mentioned': 'travel', 'message_length': 36}
+2025-02-16 11:18:43.025 | INFO     | __main__:process_message:75 - Processed message: {'category': 'travel', 'sentiment': 0.5, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:43.026 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:43.026 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'travel', 'sentiment': 0.5, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:43.026 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:43.043 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:48.022 | INFO     | __main__:main:178 - {'message': 'I just found recipe! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:18:48', 'category': 'food', 'sentiment': 0.82, 'keyword_mentioned': 'recipe', 'message_length': 37}
+2025-02-16 11:18:48.022 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found recipe! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:18:48', 'category': 'food', 'sentiment': 0.82, 'keyword_mentioned': 'recipe', 'message_length': 37}
+2025-02-16 11:18:48.022 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found recipe! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:18:48', 'category': 'food', 'sentiment': 0.82, 'keyword_mentioned': 'recipe', 'message_length': 37}
+2025-02-16 11:18:48.025 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:48.026 | INFO     | __main__:process_message:59 -    message={'message': 'I just found recipe! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:18:48', 'category': 'food', 'sentiment': 0.82, 'keyword_mentioned': 'recipe', 'message_length': 37}
+2025-02-16 11:18:48.026 | INFO     | __main__:process_message:75 - Processed message: {'category': 'food', 'sentiment': 0.82, 'sentiment_level': 'High'}
+2025-02-16 11:18:48.026 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:48.026 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'food', 'sentiment': 0.82, 'sentiment_level': 'High'}
+2025-02-16 11:18:48.026 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:48.046 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:53.023 | INFO     | __main__:main:178 - {'message': 'I just saw Python! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:53', 'category': 'tech', 'sentiment': 0.57, 'keyword_mentioned': 'Python', 'message_length': 32}
+2025-02-16 11:18:53.023 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw Python! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:53', 'category': 'tech', 'sentiment': 0.57, 'keyword_mentioned': 'Python', 'message_length': 32}
+2025-02-16 11:18:53.024 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw Python! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:53', 'category': 'tech', 'sentiment': 0.57, 'keyword_mentioned': 'Python', 'message_length': 32}
+2025-02-16 11:18:53.027 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:53.027 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw Python! It was funny.', 'author': 'Bob', 'timestamp': '2025-02-16 11:18:53', 'category': 'tech', 'sentiment': 0.57, 'keyword_mentioned': 'Python', 'message_length': 32}
+2025-02-16 11:18:53.027 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.57, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:53.029 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:53.029 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.57, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:53.029 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:53.047 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:18:58.025 | INFO     | __main__:main:178 - {'message': 'I just shared a meme! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:18:58', 'category': 'humor', 'sentiment': 0.38, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:18:58.025 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a meme! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:18:58', 'category': 'humor', 'sentiment': 0.38, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:18:58.026 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a meme! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:18:58', 'category': 'humor', 'sentiment': 0.38, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:18:58.029 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:18:58.030 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared a meme! It was funny.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:18:58', 'category': 'humor', 'sentiment': 0.38, 'keyword_mentioned': 'meme', 'message_length': 35}
+2025-02-16 11:18:58.030 | INFO     | __main__:process_message:75 - Processed message: {'category': 'humor', 'sentiment': 0.38, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:58.030 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:18:58.030 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'humor', 'sentiment': 0.38, 'sentiment_level': 'Moderate'}
+2025-02-16 11:18:58.030 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:18:58.040 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:03.027 | INFO     | __main__:main:178 - {'message': 'I just shared game! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:03', 'category': 'gaming', 'sentiment': 0.68, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:19:03.027 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared game! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:03', 'category': 'gaming', 'sentiment': 0.68, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:19:03.028 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared game! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:03', 'category': 'gaming', 'sentiment': 0.68, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:19:03.031 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:03.031 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared game! It was funny.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:03', 'category': 'gaming', 'sentiment': 0.68, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:19:03.032 | INFO     | __main__:process_message:75 - Processed message: {'category': 'gaming', 'sentiment': 0.68, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:03.032 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:03.032 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'gaming', 'sentiment': 0.68, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:03.032 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:03.052 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:08.029 | INFO     | __main__:main:178 - {'message': 'I just shared a movie! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:08', 'category': 'entertainment', 'sentiment': 0.5, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:19:08.029 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared a movie! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:08', 'category': 'entertainment', 'sentiment': 0.5, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:19:08.030 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared a movie! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:08', 'category': 'entertainment', 'sentiment': 0.5, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:19:08.034 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:08.034 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared a movie! It was weird.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:08', 'category': 'entertainment', 'sentiment': 0.5, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-02-16 11:19:08.034 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.5, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:08.034 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:08.034 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.5, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:08.035 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:08.053 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:13.031 | INFO     | __main__:main:178 - {'message': 'I just loved Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-16 11:19:13', 'category': 'tech', 'sentiment': 0.83, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-16 11:19:13.031 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-16 11:19:13', 'category': 'tech', 'sentiment': 0.83, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-16 11:19:13.032 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-16 11:19:13', 'category': 'tech', 'sentiment': 0.83, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-16 11:19:13.036 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:13.036 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved Python! It was weird.', 'author': 'Bob', 'timestamp': '2025-02-16 11:19:13', 'category': 'tech', 'sentiment': 0.83, 'keyword_mentioned': 'Python', 'message_length': 34}
+2025-02-16 11:19:13.037 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.83, 'sentiment_level': 'High'}
+2025-02-16 11:19:13.037 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:13.037 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.83, 'sentiment_level': 'High'}
+2025-02-16 11:19:13.037 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:13.063 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:18.033 | INFO     | __main__:main:178 - {'message': 'I just tried a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:19:18', 'category': 'entertainment', 'sentiment': 0.59, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-16 11:19:18.033 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:19:18', 'category': 'entertainment', 'sentiment': 0.59, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-16 11:19:18.034 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:19:18', 'category': 'entertainment', 'sentiment': 0.59, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-16 11:19:18.039 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:18.039 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried a movie! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:19:18', 'category': 'entertainment', 'sentiment': 0.59, 'keyword_mentioned': 'movie', 'message_length': 37}
+2025-02-16 11:19:18.039 | INFO     | __main__:process_message:75 - Processed message: {'category': 'entertainment', 'sentiment': 0.59, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:18.039 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:18.039 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'entertainment', 'sentiment': 0.59, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:18.039 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:18.065 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:23.035 | INFO     | __main__:main:178 - {'message': 'I just found recipe! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:19:23', 'category': 'food', 'sentiment': 0.88, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-16 11:19:23.035 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just found recipe! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:19:23', 'category': 'food', 'sentiment': 0.88, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-16 11:19:23.036 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just found recipe! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:19:23', 'category': 'food', 'sentiment': 0.88, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-16 11:19:23.040 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:23.040 | INFO     | __main__:process_message:59 -    message={'message': 'I just found recipe! It was weird.', 'author': 'Charlie', 'timestamp': '2025-02-16 11:19:23', 'category': 'food', 'sentiment': 0.88, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-02-16 11:19:23.040 | INFO     | __main__:process_message:75 - Processed message: {'category': 'food', 'sentiment': 0.88, 'sentiment_level': 'High'}
+2025-02-16 11:19:23.041 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:23.041 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'food', 'sentiment': 0.88, 'sentiment_level': 'High'}
+2025-02-16 11:19:23.041 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:23.052 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:28.037 | INFO     | __main__:main:178 - {'message': 'I just saw recipe! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:28', 'category': 'food', 'sentiment': 0.49, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-16 11:19:28.037 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw recipe! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:28', 'category': 'food', 'sentiment': 0.49, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-16 11:19:28.038 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw recipe! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:28', 'category': 'food', 'sentiment': 0.49, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-16 11:19:28.042 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:28.043 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw recipe! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:28', 'category': 'food', 'sentiment': 0.49, 'keyword_mentioned': 'recipe', 'message_length': 33}
+2025-02-16 11:19:28.043 | INFO     | __main__:process_message:75 - Processed message: {'category': 'food', 'sentiment': 0.49, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:28.043 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:28.043 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'food', 'sentiment': 0.49, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:28.043 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:28.054 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:33.039 | INFO     | __main__:main:178 - {'message': 'I just loved a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:19:33', 'category': 'other', 'sentiment': 0.28, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:19:33.039 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just loved a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:19:33', 'category': 'other', 'sentiment': 0.28, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:19:33.040 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just loved a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:19:33', 'category': 'other', 'sentiment': 0.28, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:19:33.046 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:33.046 | INFO     | __main__:process_message:59 -    message={'message': 'I just loved a trick! It was boring.', 'author': 'Bob', 'timestamp': '2025-02-16 11:19:33', 'category': 'other', 'sentiment': 0.28, 'keyword_mentioned': 'other', 'message_length': 36}
+2025-02-16 11:19:33.046 | INFO     | __main__:process_message:75 - Processed message: {'category': 'other', 'sentiment': 0.28, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:33.046 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:33.046 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'other', 'sentiment': 0.28, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:33.047 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:33.064 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:38.041 | INFO     | __main__:main:178 - {'message': 'I just saw JavaScript! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:38', 'category': 'tech', 'sentiment': 0.74, 'keyword_mentioned': 'JavaScript', 'message_length': 37}
+2025-02-16 11:19:38.041 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw JavaScript! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:38', 'category': 'tech', 'sentiment': 0.74, 'keyword_mentioned': 'JavaScript', 'message_length': 37}
+2025-02-16 11:19:38.042 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw JavaScript! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:38', 'category': 'tech', 'sentiment': 0.74, 'keyword_mentioned': 'JavaScript', 'message_length': 37}
+2025-02-16 11:19:38.048 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:38.048 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw JavaScript! It was boring.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:38', 'category': 'tech', 'sentiment': 0.74, 'keyword_mentioned': 'JavaScript', 'message_length': 37}
+2025-02-16 11:19:38.048 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.74, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:38.048 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:38.048 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.74, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:38.048 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:38.058 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:43.043 | INFO     | __main__:main:178 - {'message': 'I just saw JavaScript! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:43', 'category': 'tech', 'sentiment': 0.69, 'keyword_mentioned': 'JavaScript', 'message_length': 36}
+2025-02-16 11:19:43.043 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw JavaScript! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:43', 'category': 'tech', 'sentiment': 0.69, 'keyword_mentioned': 'JavaScript', 'message_length': 36}
+2025-02-16 11:19:43.043 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw JavaScript! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:43', 'category': 'tech', 'sentiment': 0.69, 'keyword_mentioned': 'JavaScript', 'message_length': 36}
+2025-02-16 11:19:43.048 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:43.048 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw JavaScript! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:43', 'category': 'tech', 'sentiment': 0.69, 'keyword_mentioned': 'JavaScript', 'message_length': 36}
+2025-02-16 11:19:43.050 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.69, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:43.050 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:43.050 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.69, 'sentiment_level': 'Moderate'}
+2025-02-16 11:19:43.050 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:43.060 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:48.045 | INFO     | __main__:main:178 - {'message': 'I just shared Python! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:48', 'category': 'tech', 'sentiment': 0.15, 'keyword_mentioned': 'Python', 'message_length': 35}
+2025-02-16 11:19:48.045 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just shared Python! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:48', 'category': 'tech', 'sentiment': 0.15, 'keyword_mentioned': 'Python', 'message_length': 35}
+2025-02-16 11:19:48.046 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just shared Python! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:48', 'category': 'tech', 'sentiment': 0.15, 'keyword_mentioned': 'Python', 'message_length': 35}
+2025-02-16 11:19:48.051 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:48.051 | INFO     | __main__:process_message:59 -    message={'message': 'I just shared Python! It was funny.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:48', 'category': 'tech', 'sentiment': 0.15, 'keyword_mentioned': 'Python', 'message_length': 35}
+2025-02-16 11:19:48.051 | INFO     | __main__:process_message:75 - Processed message: {'category': 'tech', 'sentiment': 0.15, 'sentiment_level': 'Low'}
+2025-02-16 11:19:48.051 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:48.051 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'tech', 'sentiment': 0.15, 'sentiment_level': 'Low'}
+2025-02-16 11:19:48.052 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:48.067 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:53.047 | INFO     | __main__:main:178 - {'message': 'I just saw game! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:53', 'category': 'gaming', 'sentiment': 0.1, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:19:53.047 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just saw game! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:53', 'category': 'gaming', 'sentiment': 0.1, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:19:53.047 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just saw game! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:53', 'category': 'gaming', 'sentiment': 0.1, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:19:53.053 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:53.054 | INFO     | __main__:process_message:59 -    message={'message': 'I just saw game! It was exciting.', 'author': 'Eve', 'timestamp': '2025-02-16 11:19:53', 'category': 'gaming', 'sentiment': 0.1, 'keyword_mentioned': 'game', 'message_length': 33}
+2025-02-16 11:19:53.054 | INFO     | __main__:process_message:75 - Processed message: {'category': 'gaming', 'sentiment': 0.1, 'sentiment_level': 'Low'}
+2025-02-16 11:19:53.054 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:53.054 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'gaming', 'sentiment': 0.1, 'sentiment_level': 'Low'}
+2025-02-16 11:19:53.054 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:53.064 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:58.048 | INFO     | __main__:main:178 - {'message': 'I just tried recipe! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:58', 'category': 'food', 'sentiment': 0.04, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-16 11:19:58.048 | INFO     | __main__:main:182 - STEP 4a Wrote message to file: {'message': 'I just tried recipe! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:58', 'category': 'food', 'sentiment': 0.04, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-16 11:19:58.048 | INFO     | __main__:main:187 - STEP 4b Sent message to Kafka topic 'buzzline': {'message': 'I just tried recipe! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:58', 'category': 'food', 'sentiment': 0.04, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-16 11:19:58.056 | INFO     | __main__:process_message:58 - Called process_message() with:
+2025-02-16 11:19:58.056 | INFO     | __main__:process_message:59 -    message={'message': 'I just tried recipe! It was amazing.', 'author': 'Alice', 'timestamp': '2025-02-16 11:19:58', 'category': 'food', 'sentiment': 0.04, 'keyword_mentioned': 'recipe', 'message_length': 36}
+2025-02-16 11:19:58.056 | INFO     | __main__:process_message:75 - Processed message: {'category': 'food', 'sentiment': 0.04, 'sentiment_level': 'Low'}
+2025-02-16 11:19:58.056 | INFO     | consumers.db_sqlite_case:insert_message:88 - Calling SQLite insert_message() with:
+2025-02-16 11:19:58.057 | INFO     | consumers.db_sqlite_case:insert_message:89 - message={'category': 'food', 'sentiment': 0.04, 'sentiment_level': 'Low'}
+2025-02-16 11:19:58.057 | INFO     | consumers.db_sqlite_case:insert_message:90 - db_path=WindowsPath('C:/Users/scmil/Documents/Data_Analytics/Data_Streaming/buzzline-05-miller/data/buzz.sqlite')
+2025-02-16 11:19:58.075 | INFO     | consumers.db_sqlite_case:insert_message:109 - Inserted one message into the database.
+2025-02-16 11:19:58.341 | WARNING  | __main__:main:192 - WARNING: Producer interrupted by user.
+2025-02-16 11:19:58.342 | INFO     | __main__:main:198 - Kafka producer closed.
+2025-02-16 11:19:58.342 | INFO     | __main__:main:199 - TRY/FINALLY: Producer shutting down.
+2025-02-16 11:19:59.573 | WARNING  | __main__:main:210 - Consumer interrupted by user.
+2025-02-16 11:19:59.574 | INFO     | __main__:main:214 - Consumer shutting down.

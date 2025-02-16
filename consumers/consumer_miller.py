@@ -58,14 +58,19 @@ def process_message(message: dict) -> None:
     logger.info("Called process_message() with:")
     logger.info(f"   {message=}")
     try:
+
+        sentiment = float(message.get("sentiment", 0.0))
+        if sentiment <= 0.25:
+            sentiment_level = "Low"
+        elif sentiment >= 0.75:
+            sentiment_level = "High"
+        else:
+            sentiment_level = "Moderate"
+
         processed_message = {
-            "message": message.get("message"),
-            "author": message.get("author"),
-            "timestamp": message.get("timestamp"),
             "category": message.get("category"),
-            "sentiment": float(message.get("sentiment", 0.0)),
-            "keyword_mentioned": message.get("keyword_mentioned"),
-            "message_length": int(message.get("message_length", 0)),
+            "sentiment": sentiment,
+            "sentiment_level": sentiment_level
         }
         logger.info(f"Processed message: {processed_message}")
         return processed_message
