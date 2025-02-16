@@ -1,9 +1,6 @@
-# buzzline-05-case
+# buzzline-05-miller
 
-Nearly every streaming analytics system stores processed data somewhere for further analysis, historical reference, or integration with BI tools.
-
-In this example project, we incorporate a relational data store. 
-We use SQLite, but the example could be altered to work with MySQL, PostgreSQL, or MongoDB.
+In this project, we will pull topic and sentiment values from messages and feed them into a database. We will also add another column that identifies the sentiment as high (0.75-1.0), moderate (.25-.75, exclusive), and low (0-.25). This could also be accomplished afterwards, with SQL and the database, but we are doing this to simulate calculations we could do for our database, where there aren't many options with these example messages.
 
 ## VS Code Extensions
 
@@ -96,17 +93,17 @@ Use the commands below to activate .venv, and start the consumer.
 Windows:
 ```shell
 .venv\Scripts\activate
-py -m consumers.kafka_consumer_case
+py -m consumers.consumer_miller
 OR
-py -m consumers.file_consumer_case
+py -m consumers.consumer_miller
 ```
 
 Mac/Linux:
 ```zsh
 source .venv/bin/activate
-python3 -m consumers.kafka_consumer_case
+python3 -m consumers.consumer_miller
 OR
-python3 -m consumers.file_consumer_case
+python3 -m consumers.consumer_miller
 ```
 
 ---
